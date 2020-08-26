@@ -76,8 +76,8 @@ interface MyPOCO {
 }
 ```
 
-And you want is to create a function that sorts an array by a nested field. Let's say the first implementation
-you just use a string to it:
+And you want to create a function that sorts an array by a nested field. Let's say the first implementation
+you just use a string to do it:
 
 ```ts
 function mySort<T>(arr: T, fields: string);

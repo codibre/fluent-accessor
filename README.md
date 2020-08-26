@@ -30,6 +30,12 @@ You can also generates a func with a fallback if some property doesn't exists in
 const func = expression(field4, undefined);
 ```
 
+You can retrive the properties navigated
+
+```ts
+const func = jsonPath(field4); // return ['field1', 'field2', 'field3', '0', 'field4']
+```
+
 Finally, using TypeScript, let's suppose you have a function like this:
 
 ```ts

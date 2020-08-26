@@ -49,14 +49,14 @@ function getProxy<T, K extends keyof T>(fields: Prop[]): ExTest<T, T[K]> {
   }) as any;
 }
 
-function b<T>(): ExTest<T>;
-function b<T = any>(field: string): ExTest<T, any>;
-function b<T, K extends keyof T>(field?: K | string): ExTest<T, T[K]> {
+function $<T>(): ExTest<T>;
+function $<T = any>(field: string): ExTest<T, any>;
+function $<T, K extends keyof T>(field?: K | string): ExTest<T, T[K]> {
   return getProxy<T, K>(field ? [field] : []);
 }
 
-console.log(b<Something>().cd[0].a.c[jsonPath]());
-const accessor = b<Something>().cd[0].a.c[expression];
+console.log($<Something>().cd[0].a.c[jsonPath]());
+const accessor = $<Something>().cd[0].a.c[expression];
 console.log(
   accessor({
     cd: [

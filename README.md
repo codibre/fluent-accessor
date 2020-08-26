@@ -10,10 +10,10 @@ Creates an object that represents json paths and can be used to access them!
 
 ## How to use it
 
-Just use **nav**, **n**, **root** or **r** to starts the navigation:
+Just use **nav**, **n**, **root**, **r** or **\$** to starts the navigation:
 
 ```ts
-const field4 = r<MyType>().field1.field2.field3[0].field4;
+const field4 = $<MyType>().field1.field2.field3[0].field4;
 ```
 
 You can convert this result into a function that returns the property value:
@@ -47,7 +47,7 @@ function doStuff(field: Navigator<MyType>) {
 Typescript can infer the generic types if you call it:
 
 ```ts
-const result = doStuff(r().field1.field2);
+const result = doStuff($().field1.field2);
 ```
 
 ## But why?
@@ -122,10 +122,10 @@ You can still use an array of strings to generate a Navigator object at the loss
 
 ```ts
 // With totally loss of typing
-const navigator = r(['field1', 'field2', 'field3])
+const navigator = $(['field1', 'field2', 'field3])
 
 // Loosing the type of the result
-const navigator = r<MyType>(['field1', 'field2', 'field3'])
+const navigator = $<MyType>(['field1', 'field2', 'field3'])
 ```
 
 Without the typing, of course, auto-complete will not help you to write your code right and some typo may happen.

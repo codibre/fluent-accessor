@@ -6,7 +6,7 @@
 [![Packages](https://david-dm.org/Codibre/json-navigator.svg)](https://david-dm.org/Codibre/json-navigator)
 [![npm version](https://badge.fury.io/js/%40codibre%2Fjson-navigator.svg)](https://badge.fury.io/js/%40codibre%2Fjson-navigator)
 
-Creates an object that represent json paths and can be used to access them!
+Creates an object that represents json paths and can be used to access them!
 
 ## How to use it
 

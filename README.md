@@ -110,7 +110,7 @@ Now, let's try with **json-navigator**
 function mySort<T>(arr: T, fields: Navigator<T>);
 
 // Usage
-mySort(myPOCOArray, n().foo.nestedFoo.foo.nestedFoo.bar);
+mySort(myPOCOArray, $().foo.nestedFoo.foo.nestedFoo.bar);
 ```
 
 Now you have it. You have a strong typed function which will help you to not typo over your implementation.

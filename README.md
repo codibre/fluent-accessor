@@ -46,7 +46,7 @@ const result = doStuff(r().field1.field2);
 
 ## But why?
 
-You my ask yourself would to do all this work if you can simply create an expression like this directly:
+You my ask yourself why would you do all this work if you can simply create an expression like this directly:
 
 ```ts
 const func = (x) => x.field1.field2.field3[0].field4;

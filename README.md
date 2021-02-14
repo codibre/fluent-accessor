@@ -1,53 +1,57 @@
-[![Actions Status](https://github.com/Codibre/json-navigator/workflows/build/badge.svg)](https://github.com/Codibre/json-navigator/actions)
-[![Actions Status](https://github.com/Codibre/json-navigator/workflows/test/badge.svg)](https://github.com/Codibre/json-navigator/actions)
-[![Actions Status](https://github.com/Codibre/json-navigator/workflows/lint/badge.svg)](https://github.com/Codibre/json-navigator/actions)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/test_coverage)](https://codeclimate.com/github/Codibre/json-navigator/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/maintainability)](https://codeclimate.com/github/Codibre/json-navigator/maintainability)
-[![Packages](https://david-dm.org/Codibre/json-navigator.svg)](https://david-dm.org/Codibre/json-navigator)
-[![npm version](https://badge.fury.io/js/%40codibre%2Fjson-navigator.svg)](https://badge.fury.io/js/%40codibre%2Fjson-navigator)
+[![Actions Status](https://github.com/Codibre/expression-tree/workflows/build/badge.svg)](https://github.com/Codibre/expression-tree/actions)
+[![Actions Status](https://github.com/Codibre/expression-tree/workflows/test/badge.svg)](https://github.com/Codibre/expression-tree/actions)
+[![Actions Status](https://github.com/Codibre/expression-tree/workflows/lint/badge.svg)](https://github.com/Codibre/expression-tree/actions)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/test_coverage)](https://codeclimate.com/github/Codibre/expression-tree/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/maintainability)](https://codeclimate.com/github/Codibre/expression-tree/maintainability)
+[![Packages](https://david-dm.org/Codibre/expression-tree.svg)](https://david-dm.org/Codibre/expression-tree)
+[![npm version](https://badge.fury.io/js/%40codibre%2Fexpression-tree.svg)](https://badge.fury.io/js/%40codibre%2Fexpression-tree)
 
-Creates an object that represents json paths and can be used to access them!
+Dynamically creates an accessor functions based on property paths!
 
 ## How to use it
 
-Just use **nav**, **n**, **root**, **r** or **\$** to starts the navigation:
+Just use **\$** to starts the navigation:
 
 ```ts
-const field4 = $<MyType>().field1.field2.field3[0].field4;
+const func = $<MyType>().field1.field2.field3[0].field4;
 ```
 
-You can convert this result into a function that returns the property value:
+func will be an accessor for the field4 following the whole specified path
 
 ```ts
-const func = expression(field4); // return a function equivalent to (x) => x.field1.field2.field3[0].field4
+console.log(func(myInstance)); // returns the value of myInstance.field1.field2.field3[0].field4;
+```
 
-console.log(func(myInstance));
+You can also run it with a fallback
+
+```ts
+console.log(func(myInstance, undefined)); // In case of some property not existing, it will return undefined;
 ```
 
 You can also generates a func with a fallback if some property doesn't exists in the path
 
 ```ts
-const func = expression(field4, undefined);
+const func = applyFallback(field4, undefined);
 ```
 
 You can retrieve the properties navigated
 
 ```ts
-const func = jsonPath(field4); // return ['field1', 'field2', 'field3', '0', 'field4']
+const func = jsonPath(func); // return an iterable that yields 'field1', 'field2', 'field3', '0' and, then, 'field4'
 ```
 
 Finally, using TypeScript, let's suppose you have a function like this:
 
 ```ts
-function doStuff(field: Navigator<MyType>) {
+function doStuff(field: (a: MyType) => T>) {
   // do some stuff
 }
 ```
 
-Typescript can infer the generic types if you call it:
+Typescript can infer the generic types if you call it like this:
 
 ```ts
-const result = doStuff($().field1.field2);
+const result = doStuff($('field1', 'field2'));
 ```
 
 ## But why?
@@ -59,7 +63,7 @@ const func = (x) => x.field1.field2.field3[0].field4;
 ```
 
 The reasons are: **information** and **IDE helping**.
-Using **json-navigator** you can have more than just a function that returns the value of a nested field:
+Using **expression-tree** you can have more than just a function that returns the value of a nested field:
 
 - You can know the path you're accessing just by using **jsonPath**;
 - You have control of scope: you know that the generated expression will only return the field value;
@@ -104,31 +108,17 @@ mySort(myPOCOArray, ['foo', 'nestedFoo', 'foo', 'nestedFoo', 'bar']);
 ```
 
 Well, that actually will not compile because of the type you specified for the array. You can use **string**, but then, you'll have the same problem of the first approach.
-Now, let's try with **json-navigator**
+Now, let's try with **expression-tree**
 
 ```ts
-function mySort<T>(arr: T, fields: Navigator<T>);
+function mySort<T>(arr: T, fields: Expression<T, unknown>);
 
 // Usage
-mySort(myPOCOArray, $().foo.nestedFoo.foo.nestedFoo.bar);
+mySort(myPOCOArray, $('foo', 'nestedFoo', 'foo', 'nestedFoo', 'bar');
 ```
 
 Now you have it. You have a strong typed function which will help you to not typo over your implementation.
 Also, internally, you have access to all the nested field names you'll consider in your index because, I don't know, you want to register it in some place.
-
-## That's looks interesting, but with strings I have more flexibility
-
-You can still use an array of strings to generate a Navigator object at the loss of typing, like this:
-
-```ts
-// With totally loss of typing
-const navigator = $(['field1', 'field2', 'field3])
-
-// Loosing the type of the result
-const navigator = $<MyType>(['field1', 'field2', 'field3'])
-```
-
-Without the typing, of course, auto-complete will not help you to write your code right and some typo may happen.
 
 ## License
 

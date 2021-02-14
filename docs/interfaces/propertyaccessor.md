@@ -1,4 +1,4 @@
-[fluent-iterable - v0.0.3](../README.md) / PropertyAccessor
+[fluent-iterable - v0.0.4](../README.md) / PropertyAccessor
 
 # Interface: PropertyAccessor<Input, Output\>
 

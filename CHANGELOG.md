@@ -1,4 +1,11 @@
 
+## 0.0.4
+* ede6237 removing semantic release changelog
+* 10cab6b fixing package-lock
+* 8a47199 Merge pull request #2 from Codibre/dependabot/npm_and_yarn/node-fetch-2.6.1
+* cc5c8b9 Bump node-fetch from 2.6.0 to 2.6.1
+## v0.0.3
+* f26cd06 0.0.3
 * ee566b5 fixing more than 10 level return type and github url
 * 30dc13f updating docs
 * b3166fd treating non Expression in jsonPath

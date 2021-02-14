@@ -1,3 +1,9 @@
+## [0.0.6](https://github.com/codibre/fluent-accessor/compare/v0.0.5...v0.0.6) (2021-02-14)
+
+
+### Bug Fixes
+
+* Fixing readme ([db36236](https://github.com/codibre/fluent-accessor/commit/db36236b713d7c2a282584d105c1d4822e64b7e6))
 
 ## 0.0.5
 * 1a52832 re-adding semantic-release/changelog

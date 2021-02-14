@@ -1,5 +1,8 @@
 
-## 0.0.4
+## 0.0.5
+* 1a52832 re-adding semantic-release/changelog
+## v0.0.4
+* 6dd676a 0.0.4
 * ede6237 removing semantic release changelog
 * 10cab6b fixing package-lock
 * 8a47199 Merge pull request #2 from Codibre/dependabot/npm_and_yarn/node-fetch-2.6.1

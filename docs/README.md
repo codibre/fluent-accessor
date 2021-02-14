@@ -1,6 +1,6 @@
-fluent-iterable - v0.0.2
+fluent-iterable - v0.0.3
 
-# fluent-iterable - v0.0.2
+# fluent-iterable - v0.0.3
 
 ## Table of contents
 
@@ -322,7 +322,7 @@ Name | Type |
 
 **Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): [*Expression*](README.md#expression)<T, *unknown*\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): [*Expression*](README.md#expression)<T, *any*\>
 
 #### Type parameters:
 
@@ -357,7 +357,7 @@ Name | Type |
 `field11` | [*FieldType*](README.md#fieldtype) |
 `...others` | [*FieldType*](README.md#fieldtype)[] |
 
-**Returns:** [*Expression*](README.md#expression)<T, *unknown*\>
+**Returns:** [*Expression*](README.md#expression)<T, *any*\>
 
 ___
 

@@ -4,7 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/test_coverage)](https://codeclimate.com/github/Codibre/fluent-accessor/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/maintainability)](https://codeclimate.com/github/Codibre/fluent-accessor/maintainability)
 [![Packages](https://david-dm.org/Codibre/fluent-accessor.svg)](https://david-dm.org/Codibre/fluent-accessor)
-[![npm version](https://badge.fury.io/js/%40codibre%2Ffluent-accessor.svg)](https://badge.fury.io/js/%40codibre%2Ffluent-accessor)
+[![npm version](https://badge.fury.io/js/fluent-accessor.svg)](https://badge.fury.io/js/fluent-accessor)
 
 Dynamically creates an accessor functions based on property paths!
 

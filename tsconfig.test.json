@@ -1,9 +1,9 @@
 {
   "extends": "@codibre/confs/tsconfig.test.json",
   "compilerOptions": {
+    "target": "es2018",
     "outDir": "./dist",
     "types": [
-      "reflect-metadata",
       "node",
       "mocha",
       "chai",

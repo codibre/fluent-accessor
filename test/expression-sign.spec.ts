@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { $ } from '../src';
+import { $, none } from '../src';
 
 interface Something {
   ab: string;
@@ -45,7 +45,7 @@ describe('$', () => {
     expect(result).to.be.eq('error');
   });
 
-  it('should throw a TypeError when path does not exist and there is no fallback', () => {
+  it('should throw a TypeError when path does not exist and fallback is set to none', () => {
     const something: Something = {
       ab: 'ab value',
       cd: [] as any,
@@ -54,7 +54,7 @@ describe('$', () => {
     let thrownError!: TypeError;
 
     try {
-      path(something);
+      path(something, none);
     } catch (err) {
       thrownError = err;
     }

@@ -1,11 +1,10 @@
 import { FieldType, PropertyAccessor } from '../types';
+import { none } from '../lib/none';
 
-const none = Symbol('none');
-
-export function get<Input = any, Output = any>(
+export function getFactory<Input = any, Output = any>(
   target: Iterable<FieldType>,
 ): PropertyAccessor<Input, Output> {
-  return (x: any, fallback: any = none) => {
+  return (x: any, fallback: any) => {
     let result = x;
     if (fallback === none) {
       const path: FieldType[] = [];
@@ -26,6 +25,9 @@ export function get<Input = any, Output = any>(
         } else {
           return fallback;
         }
+      }
+      if (result === undefined) {
+        return fallback;
       }
     }
     return result;

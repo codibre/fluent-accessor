@@ -1,2 +1,2 @@
-export * from './get';
+export * from './get-factory';
 export * from './get-proxy';

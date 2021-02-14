@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { $, applyFallback } from '../src';
+import { getOrDef } from '../src';
 
 interface Something {
   ab: string;
@@ -13,16 +13,14 @@ interface Something {
   ];
 }
 
-describe(applyFallback.name, () => {
+describe(getOrDef.name, () => {
   it('should return fallback when it i informed and the path is not found', () => {
     const something: Something = {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<typeof something>().cd[0].a.c;
-    const func = applyFallback(path, 'error');
 
-    const result = func(something);
+    const result = getOrDef(something, 'error', 'cd', '0', 'a', 'c');
 
     expect(result).to.be.eq('error');
   });
@@ -39,11 +37,25 @@ describe(applyFallback.name, () => {
         },
       ],
     };
-    const path = $<Something>().cd[0].a.c;
-    const func = applyFallback(path, 'error');
-
-    const result = func(something);
+    const result = getOrDef(something, 'error', 'cd', '0', 'a', 'c');
 
     expect(result).to.be.eq(7);
+  });
+
+  it('should return the default value of the item when the last part of the path is undefined', () => {
+    const something: Something = {
+      ab: 'ab value',
+      cd: [
+        {
+          a: {
+            c: undefined as any,
+          },
+          b: 1,
+        },
+      ],
+    };
+    const result = getOrDef(something, 'error', 'cd', '0', 'a', 'c');
+
+    expect(result).to.be.eq('error');
   });
 });

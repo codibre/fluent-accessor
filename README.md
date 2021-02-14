@@ -121,6 +121,22 @@ Now you have it. You have a strong typed function which will help you to not typ
 
 Also, internally, you have access to all the nested field names you'll consider in your index because, I don't know, you want to register it in some place.
 
+# get and getOrDef
+
+You can also use this library to get directly the value of a nested property, like this:
+
+```ts
+const result = get(myInstance, 'foo', 'bar', '0', 'fooBar');
+```
+
+The advantage of it? result is strongly typed by default!
+In this call, if the nested path is not found, result will be undefined.
+If you want to define a default value for it, use **getOrDef**
+
+```ts
+const result = getOrDef(myInstance, 99, 'foo', 'bar', '0', 'fooBar');
+```
+
 ## License
 
 Licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License).

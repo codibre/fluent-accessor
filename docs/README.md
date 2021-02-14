@@ -1,6 +1,6 @@
-fluent-iterable - v0.2.0
+fluent-iterable - v0.3.0
 
-# fluent-iterable - v0.2.0
+# fluent-iterable - v0.3.0
 
 ## Table of contents
 
@@ -24,6 +24,7 @@ fluent-iterable - v0.2.0
 - [get](README.md#get)
 - [getOrDef](README.md#getordef)
 - [jsonPath](README.md#jsonpath)
+- [setStrictness](README.md#setstrictness)
 
 ## Type aliases
 
@@ -1037,3 +1038,29 @@ Name | Type | Description |
 **Returns:** (*string* \| *number* \| *symbol*)[]
 
 an iterable with the json path for the informed expression
+
+___
+
+### setStrictness
+
+▸ **setStrictness**<T, R\>(`accessor`: [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\>, `strict`: *boolean*): *void*
+
+Defines if an accessor must strict check the fallback or not.
+Set to true if you want the accessor to throw an error when the path is not found and fallback is undefined
+Se tto false if you want to always returns the fallback, even when it is undefined
+
+#### Type parameters:
+
+Name |
+------ |
+`T` |
+`R` |
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`accessor` | [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\> | The acessor to have the strictness changed   |
+`strict` | *boolean* | the new value for strictness: true or false    |
+
+**Returns:** *void*

@@ -1,5 +1,8 @@
 
-## 0.2.0
+## 0.3.0
+* f79d375 creating setStrictness
+## v0.2.0
+* 6a97b84 0.2.0
 * bddc328 bettering property getter and creating get and getAndDef
 ## v0.1.0
 * 5dce647 0.1.0

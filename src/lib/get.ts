@@ -190,6 +190,6 @@ export function get<T>(
 
   ...fields: FieldType[]
 ): unknown | undefined {
-  const internalGet = getFactory(fields);
+  const internalGet = getFactory(fields, false);
   return internalGet(source, undefined);
 }

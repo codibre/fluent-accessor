@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { $, none } from '../src';
+import { $ } from '../src';
 
 interface Something {
   ab: string;
@@ -54,7 +54,7 @@ describe('$', () => {
     let thrownError!: TypeError;
 
     try {
-      path(something, none);
+      path(something);
     } catch (err) {
       thrownError = err;
     }

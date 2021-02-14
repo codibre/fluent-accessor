@@ -206,6 +206,6 @@ export function getOrDef<T, F>(
   fallback: F,
   ...fields: FieldType[]
 ): unknown | F {
-  const internalGet = getFactory(fields);
+  const internalGet = getFactory(fields, false);
   return internalGet(source, fallback);
 }

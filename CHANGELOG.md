@@ -1,5 +1,8 @@
 
-## 0.0.7
+## 0.1.0
+* 9ac89b8 fixing readme
+## v0.0.7
+* e11ed7d 0.0.7
 * bf3e2d6 fixing dependencies and es target
 ## v0.0.6
 * aa49a85 0.0.6

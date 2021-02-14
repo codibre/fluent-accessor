@@ -118,6 +118,7 @@ mySort(myPOCOArray, $('foo', 'nestedFoo', 'foo', 'nestedFoo', 'bar'));
 ```
 
 Now you have it. You have a strong typed function which will help you to not typo over your implementation.
+
 Also, internally, you have access to all the nested field names you'll consider in your index because, I don't know, you want to register it in some place.
 
 ## License

@@ -1,10 +1,10 @@
-[![Actions Status](https://github.com/Codibre/expression-tree/workflows/build/badge.svg)](https://github.com/Codibre/expression-tree/actions)
-[![Actions Status](https://github.com/Codibre/expression-tree/workflows/test/badge.svg)](https://github.com/Codibre/expression-tree/actions)
-[![Actions Status](https://github.com/Codibre/expression-tree/workflows/lint/badge.svg)](https://github.com/Codibre/expression-tree/actions)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/test_coverage)](https://codeclimate.com/github/Codibre/expression-tree/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/maintainability)](https://codeclimate.com/github/Codibre/expression-tree/maintainability)
-[![Packages](https://david-dm.org/Codibre/expression-tree.svg)](https://david-dm.org/Codibre/expression-tree)
-[![npm version](https://badge.fury.io/js/%40codibre%2Fexpression-tree.svg)](https://badge.fury.io/js/%40codibre%2Fexpression-tree)
+[![Actions Status](https://github.com/Codibre/fluent-accessor/workflows/build/badge.svg)](https://github.com/Codibre/fluent-accessor/actions)
+[![Actions Status](https://github.com/Codibre/fluent-accessor/workflows/test/badge.svg)](https://github.com/Codibre/fluent-accessor/actions)
+[![Actions Status](https://github.com/Codibre/fluent-accessor/workflows/lint/badge.svg)](https://github.com/Codibre/fluent-accessor/actions)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/test_coverage)](https://codeclimate.com/github/Codibre/fluent-accessor/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4bc45857f25baf6aef9c/maintainability)](https://codeclimate.com/github/Codibre/fluent-accessor/maintainability)
+[![Packages](https://david-dm.org/Codibre/fluent-accessor.svg)](https://david-dm.org/Codibre/fluent-accessor)
+[![npm version](https://badge.fury.io/js/%40codibre%2Ffluent-accessor.svg)](https://badge.fury.io/js/%40codibre%2Ffluent-accessor)
 
 Dynamically creates an accessor functions based on property paths!
 
@@ -63,7 +63,7 @@ const func = (x) => x.field1.field2.field3[0].field4;
 ```
 
 The reasons are: **information** and **IDE helping**.
-Using **expression-tree** you can have more than just a function that returns the value of a nested field:
+Using **fluent-accessor** you can have more than just a function that returns the value of a nested field:
 
 - You can know the path you're accessing just by using **jsonPath**;
 - You have control of scope: you know that the generated expression will only return the field value;
@@ -108,7 +108,7 @@ mySort(myPOCOArray, ['foo', 'nestedFoo', 'foo', 'nestedFoo', 'bar']);
 ```
 
 Well, that actually will not compile because of the type you specified for the array. You can use **string**, but then, you'll have the same problem of the first approach.
-Now, let's try with **expression-tree**
+Now, let's try with **fluent-accessor**
 
 ```ts
 function mySort<T>(arr: T, fields: Expression<T, unknown>);

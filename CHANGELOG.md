@@ -1,5 +1,8 @@
 
-## 0.1.0
+## 0.2.0
+* bddc328 bettering property getter and creating get and getAndDef
+## v0.1.0
+* 5dce647 0.1.0
 * 9ac89b8 fixing readme
 ## v0.0.7
 * e11ed7d 0.0.7

@@ -1,6 +1,6 @@
-fluent-iterable - v0.1.0
+fluent-iterable - v0.2.0
 
-# fluent-iterable - v0.1.0
+# fluent-iterable - v0.2.0
 
 ## Table of contents
 
@@ -16,11 +16,13 @@ fluent-iterable - v0.1.0
 ### Variables
 
 - [jsonPathSymbol](README.md#jsonpathsymbol)
+- [none](README.md#none)
 
 ### Functions
 
 - [$](README.md#$)
-- [applyFallback](README.md#applyfallback)
+- [get](README.md#get)
+- [getOrDef](README.md#getordef)
 - [jsonPath](README.md#jsonpath)
 
 ## Type aliases
@@ -47,6 +49,12 @@ ___
 ### jsonPathSymbol
 
 • `Const` **jsonPathSymbol**: *typeof* [*jsonPathSymbol*](README.md#jsonpathsymbol)
+
+___
+
+### none
+
+• `Const` **none**: *typeof* [*none*](README.md#none)
 
 ## Functions
 
@@ -361,30 +369,649 @@ Name | Type |
 
 ___
 
-### applyFallback
+### get
 
-▸ **applyFallback**<A, B, C\>(`expression`: [*Expression*](README.md#expression)<A, B\>, `fallback`: C): *function*
-
-Returns a accessor function with a fallback value
+▸ **get**<T, K1\>(`source`: T, `field1`: K1): T[K1] \| *undefined*
 
 #### Type parameters:
 
-Name |
------- |
-`A` |
-`B` |
-`C` |
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
 
 #### Parameters:
 
-Name | Type | Description |
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+
+**Returns:** T[K1] \| *undefined*
+
+▸ **get**<T, K1, K2\>(`source`: T, `field1`: K1, `field2`: K2): T[K1][K2] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
 ------ | ------ | ------ |
-`expression` | [*Expression*](README.md#expression)<A, B\> | the base accessor expression   |
-`fallback` | C | the fallback value in case of some property in the expression path does not exist   |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
 
-**Returns:** *function*
+#### Parameters:
 
-An accessor function with an applied fallback
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+
+**Returns:** T[K1][K2] \| *undefined*
+
+▸ **get**<T, K1, K2, K3\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3): T[K1][K2][K3] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+
+**Returns:** T[K1][K2][K3] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): T[K1][K2][K3][K4] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+
+**Returns:** T[K1][K2][K3][K4] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4, K5\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): T[K1][K2][K3][K4][K5] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+
+**Returns:** T[K1][K2][K3][K4][K5] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4, K5, K6\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): T[K1][K2][K3][K4][K5][K6] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): T[K1][K2][K3][K4][K5][K6][K7] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): T[K1][K2][K3][K4][K5][K6][K7][K8] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+`field9` | K9 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+`field9` | K9 |
+`field10` | K10 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| *undefined*
+
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): *any* \| *undefined*
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+`field9` | K9 |
+`field10` | K10 |
+`field11` | [*FieldType*](README.md#fieldtype) |
+`...others` | [*FieldType*](README.md#fieldtype)[] |
+
+**Returns:** *any* \| *undefined*
+
+___
+
+### getOrDef
+
+▸ **getOrDef**<T, F, K1\>(`source`: T, `fallback`: F, `field1`: K1): T[K1] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+
+**Returns:** T[K1] \| F
+
+▸ **getOrDef**<T, F, K1, K2\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2): T[K1][K2] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+
+**Returns:** T[K1][K2] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3): T[K1][K2][K3] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+
+**Returns:** T[K1][K2][K3] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): T[K1][K2][K3][K4] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+
+**Returns:** T[K1][K2][K3][K4] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): T[K1][K2][K3][K4][K5] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+
+**Returns:** T[K1][K2][K3][K4][K5] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): T[K1][K2][K3][K4][K5][K6] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): T[K1][K2][K3][K4][K5][K6][K7] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): T[K1][K2][K3][K4][K5][K6][K7][K8] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+`field9` | K9 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+`field9` | K9 |
+`field10` | K10 |
+
+**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| F
+
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): *any* \| F
+
+#### Type parameters:
+
+Name | Type | Default |
+------ | ------ | ------ |
+`T` | - | - |
+`F` | - | - |
+`K1` | *string* \| *number* \| *symbol* | keyof T |
+`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+
+#### Parameters:
+
+Name | Type |
+------ | ------ |
+`source` | T |
+`fallback` | F |
+`field1` | K1 |
+`field2` | K2 |
+`field3` | K3 |
+`field4` | K4 |
+`field5` | K5 |
+`field6` | K6 |
+`field7` | K7 |
+`field8` | K8 |
+`field9` | K9 |
+`field10` | K10 |
+`field11` | [*FieldType*](README.md#fieldtype) |
+`...others` | [*FieldType*](README.md#fieldtype)[] |
+
+**Returns:** *any* \| F
 
 ___
 

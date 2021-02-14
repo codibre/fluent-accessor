@@ -1,5 +1,8 @@
 
-## 0.0.6
+## 0.0.7
+* bf3e2d6 fixing dependencies and es target
+## v0.0.6
+* aa49a85 0.0.6
 * d8d3439 chore(release): 0.0.6 [skip ci]
 * db36236 fix(): Fixing readme
 * a891530 fixing changelog

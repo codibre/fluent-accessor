@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { $, jsonPathSymbol } from '../src';
+import { $ } from '../src';
 
 interface Something {
   ab: string;

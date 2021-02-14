@@ -45,7 +45,12 @@
   "bugs": {
     "url": "https://github.com/codibre/boilerplate-base/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "property",
+    "accessor",
+    "autocomplete",
+    "typescript"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@codibre/confs": "0.0.6",

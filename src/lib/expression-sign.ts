@@ -169,7 +169,7 @@ export function $<
   field10: K10,
   field11: FieldType,
   ...others: FieldType[]
-): Expression<T, unknown>;
+): Expression<T, any>;
 export function $<T, K extends keyof T>(
   ...fields: FieldType[]
 ): Expression<T, T[K]> {

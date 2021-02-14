@@ -43,7 +43,7 @@ const func = jsonPath(func); // return an iterable that yields 'field1', 'field2
 Finally, using TypeScript, let's suppose you have a function like this:
 
 ```ts
-function doStuff(field: (a: MyType) => T>) {
+function doStuff(field: (a: MyType) => T) {
   // do some stuff
 }
 ```
@@ -114,7 +114,7 @@ Now, let's try with **expression-tree**
 function mySort<T>(arr: T, fields: Expression<T, unknown>);
 
 // Usage
-mySort(myPOCOArray, $('foo', 'nestedFoo', 'foo', 'nestedFoo', 'bar');
+mySort(myPOCOArray, $('foo', 'nestedFoo', 'foo', 'nestedFoo', 'bar'));
 ```
 
 Now you have it. You have a strong typed function which will help you to not typo over your implementation.

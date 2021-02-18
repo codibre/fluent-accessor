@@ -13,4 +13,6 @@ export function applyFallback<T, R, F>(
 ) {
   setStrictness(func, false);
   (func as any)[fallback] = fallbackValue;
+
+  return func;
 }

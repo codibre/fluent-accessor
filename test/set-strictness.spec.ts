@@ -87,10 +87,11 @@ describe(setStrictness.name, () => {
       cd: [] as any,
     };
     const path = $<Something>().cd[0].a.c;
-    setStrictness(path, false);
+    const strictnessResult = setStrictness(path, false);
 
     const result = path(something);
 
+    expect(strictnessResult).to.be.eq(path);
     expect(result).to.be.undefined;
   });
 });

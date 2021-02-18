@@ -13,4 +13,6 @@ export function setStrictness<T, R>(
   strict: boolean,
 ) {
   (accessor as any)[strictCheck] = strict;
+
+  return accessor;
 }

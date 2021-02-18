@@ -12,9 +12,10 @@ describe(applyFallback.name, () => {
     };
     const callback = $<any>().a.b.c.e.f;
 
-    applyFallback(callback, 123);
+    const applyResult = applyFallback(callback, 123);
     const result = callback(a);
 
+    expect(applyResult).to.be.eq(callback);
     expect(result).to.be.eq(123);
   });
 });

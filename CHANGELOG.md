@@ -1,5 +1,8 @@
 
-## 0.5.0
+## 1.0.0
+* 29f587e fixing project description
+## v0.5.0
+* a246e45 0.5.0
 * 3ef2609 returning func in applyFallback and setStrictness for easiness of use when passing as parameter
 * b937ee1 completing readme
 ## v0.4.0

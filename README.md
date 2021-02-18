@@ -62,6 +62,9 @@ Typescript can infer the generic types if you call it like this:
 const result = doStuff($('field1', 'field2'));
 ```
 
+This last option, combined with TypeScript, is very powerful! Because of contextual typing, you can infer each
+property to navigate without informing any type! Of course, if you didn't use "any" in your parameters ;)
+
 ## But why?
 
 You my ask yourself why would you do all this work if you can simply create an expression like this directly:

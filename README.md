@@ -6,7 +6,7 @@
 [![Packages](https://david-dm.org/Codibre/fluent-accessor.svg)](https://david-dm.org/Codibre/fluent-accessor)
 [![npm version](https://badge.fury.io/js/fluent-accessor.svg)](https://badge.fury.io/js/fluent-accessor)
 
-Dynamically creates an accessor functions based on property paths!
+Dynamically creates an accessor function based on property paths!
 
 ## How to use it
 
@@ -25,16 +25,24 @@ console.log(func(myInstance)); // returns the value of myInstance.field1.field2.
 You can also run it with a fallback
 
 ```ts
-console.log(func(myInstance, undefined)); // In case of some property not existing, it will return undefined;
+console.log(func(myInstance, null)); // In case of some property not existing, it will return null;
 ```
 
-You can also generates a func with a fallback if some property doesn't exists in the path
+If you want to return undefined instead, you also can, setting off the strictness of the function:
 
 ```ts
-const func = applyFallback(field4, undefined);
+setStrictness(func, false);
+console.log(func(myInstance)); // In case of some property not existing, it will return undefined;
 ```
 
-You can retrieve the properties navigated
+You can aplly fallback for a func implicitly
+
+```ts
+applyFallback(field4, 123);
+console.log(func(myInstance)); // In case of some property not existing, it will return 123;
+```
+
+You can retrieve the navigated properties
 
 ```ts
 const func = jsonPath(func); // return an iterable that yields 'field1', 'field2', 'field3', '0' and, then, 'field4'

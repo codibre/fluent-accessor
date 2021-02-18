@@ -1,5 +1,6 @@
 import { FieldType, PropertyAccessor } from '../types';
 import { none } from '../lib/none';
+import { fallback } from './fallback';
 
 export const strictCheck = Symbol('strictCheck');
 
@@ -7,11 +8,11 @@ export function getFactory<Input = any, Output = any>(
   target: Iterable<FieldType>,
   strict = true,
 ): PropertyAccessor<Input, Output> {
-  const callback = (x: any, fallback: any) => {
+  const callback = (x: any, fallbackValue: any) => {
     let result = x;
     if (
-      (fallback === undefined && (callback as any)[strictCheck]) ||
-      fallback === none
+      (fallbackValue === undefined && (callback as any)[strictCheck]) ||
+      fallbackValue === none
     ) {
       const path: FieldType[] = [];
       try {
@@ -25,15 +26,18 @@ export function getFactory<Input = any, Output = any>(
         );
       }
     } else {
+      if (fallbackValue === undefined) {
+        fallbackValue = (callback as any)[fallback];
+      }
       for (const prop of target) {
         if (result.hasOwnProperty(prop)) {
           result = result[prop];
         } else {
-          return fallback;
+          return fallbackValue;
         }
       }
       if (result === undefined) {
-        return fallback;
+        return fallbackValue;
       }
     }
     return result;

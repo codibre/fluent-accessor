@@ -1,6 +1,6 @@
-fluent-iterable - v0.3.0
+fluent-iterable - v0.4.0
 
-# fluent-iterable - v0.3.0
+# fluent-iterable - v0.4.0
 
 ## Table of contents
 
@@ -21,6 +21,7 @@ fluent-iterable - v0.3.0
 ### Functions
 
 - [$](README.md#$)
+- [applyFallback](README.md#applyfallback)
 - [get](README.md#get)
 - [getOrDef](README.md#getordef)
 - [jsonPath](README.md#jsonpath)
@@ -30,7 +31,7 @@ fluent-iterable - v0.3.0
 
 ### Expression
 
-Ƭ **Expression**<Input, Output\>: { [key in keyof Output]: Expression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22521`: () => (*string* \| *number* \| *symbol*)[]  }
+Ƭ **Expression**<Input, Output\>: { [key in keyof Output]: Expression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22523`: () => (*string* \| *number* \| *symbol*)[]  }
 
 #### Type parameters:
 
@@ -367,6 +368,31 @@ Name | Type |
 `...others` | [*FieldType*](README.md#fieldtype)[] |
 
 **Returns:** [*Expression*](README.md#expression)<T, *any*\>
+
+___
+
+### applyFallback
+
+▸ **applyFallback**<T, R, F\>(`func`: [*Expression*](README.md#expression)<T, R\>, `fallbackValue`: F): *void*
+
+Applies the given fallback for the Expression
+
+#### Type parameters:
+
+Name |
+------ |
+`T` |
+`R` |
+`F` |
+
+#### Parameters:
+
+Name | Type | Description |
+------ | ------ | ------ |
+`func` | [*Expression*](README.md#expression)<T, R\> | The expression you to apply the fallback   |
+`fallbackValue` | F | the fallback    |
+
+**Returns:** *void*
 
 ___
 

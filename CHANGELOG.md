@@ -1,5 +1,8 @@
 
-## 0.3.0
+## 0.4.0
+* 85803a7 creating applyFallback
+## v0.3.0
+* ccafc47 0.3.0
 * f79d375 creating setStrictness
 ## v0.2.0
 * 6a97b84 0.2.0

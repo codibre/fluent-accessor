@@ -1,6 +1,6 @@
-fluent-iterable - v0.4.0
+fluent-iterable - v0.5.0
 
-# fluent-iterable - v0.4.0
+# fluent-iterable - v0.5.0
 
 ## Table of contents
 
@@ -373,7 +373,7 @@ ___
 
 ### applyFallback
 
-▸ **applyFallback**<T, R, F\>(`func`: [*Expression*](README.md#expression)<T, R\>, `fallbackValue`: F): *void*
+▸ **applyFallback**<T, R, F\>(`func`: [*Expression*](README.md#expression)<T, R\>, `fallbackValue`: F): [*Expression*](README.md#expression)<T, R\>
 
 Applies the given fallback for the Expression
 
@@ -392,7 +392,7 @@ Name | Type | Description |
 `func` | [*Expression*](README.md#expression)<T, R\> | The expression you to apply the fallback   |
 `fallbackValue` | F | the fallback    |
 
-**Returns:** *void*
+**Returns:** [*Expression*](README.md#expression)<T, R\>
 
 ___
 
@@ -1069,7 +1069,7 @@ ___
 
 ### setStrictness
 
-▸ **setStrictness**<T, R\>(`accessor`: [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\>, `strict`: *boolean*): *void*
+▸ **setStrictness**<T, R\>(`accessor`: [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\>, `strict`: *boolean*): [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\>
 
 Defines if an accessor must strict check the fallback or not.
 Set to true if you want the accessor to throw an error when the path is not found and fallback is undefined
@@ -1089,4 +1089,4 @@ Name | Type | Description |
 `accessor` | [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\> | The acessor to have the strictness changed   |
 `strict` | *boolean* | the new value for strictness: true or false    |
 
-**Returns:** *void*
+**Returns:** [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\>

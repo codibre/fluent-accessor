@@ -1,5 +1,9 @@
 
-## 0.4.0
+## 0.5.0
+* 3ef2609 returning func in applyFallback and setStrictness for easiness of use when passing as parameter
+* b937ee1 completing readme
+## v0.4.0
+* bd2955f 0.4.0
 * 85803a7 creating applyFallback
 ## v0.3.0
 * ccafc47 0.3.0

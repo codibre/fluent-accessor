@@ -15,22 +15,28 @@ export function getFactory<Input = any, Output = any>(
       fallbackValue === none
     ) {
       const path: FieldType[] = [];
-      try {
-        for (const prop of target) {
-          result = result[prop];
-          path.push(prop);
+      for (const prop of target) {
+        if (typeof prop === 'function') {
+          result = prop(result);
+        } else {
+          try {
+            result = result[prop];
+          } catch {
+            throw new TypeError(
+              `Property doesn't exists or is undefined: ${path.join('.')}`,
+            );
+          }
         }
-      } catch {
-        throw new TypeError(
-          `Property doesn't exists or is undefined: ${path.join('.')}`,
-        );
+        path.push(prop);
       }
     } else {
       if (fallbackValue === undefined) {
         fallbackValue = (callback as any)[fallback];
       }
       for (const prop of target) {
-        if (result.hasOwnProperty(prop)) {
+        if (typeof prop === 'function') {
+          result = prop(result);
+        } else if (result.hasOwnProperty(prop)) {
           result = result[prop];
         } else {
           return fallbackValue;

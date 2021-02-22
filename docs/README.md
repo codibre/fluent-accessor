@@ -672,14 +672,14 @@ ___
 
 ### get
 
-▸ **get**<T, K1\>(`source`: T, `field1`: K1): T[K1] \| *undefined*
+▸ **get**<T, K1\>(`source`: T, `field1`: K1): [*V*](README.md#v)<T, K1\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
 
 #### Parameters:
 
@@ -688,17 +688,17 @@ Name | Type |
 `source` | T |
 `field1` | K1 |
 
-**Returns:** T[K1] \| *undefined*
+**Returns:** [*V*](README.md#v)<T, K1\> \| *undefined*
 
-▸ **get**<T, K1, K2\>(`source`: T, `field1`: K1, `field2`: K2): T[K1][K2] \| *undefined*
+▸ **get**<T, K1, K2\>(`source`: T, `field1`: K1, `field2`: K2): [*V2*](README.md#v2)<T, K1, K2\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
 
 #### Parameters:
 
@@ -708,18 +708,18 @@ Name | Type |
 `field1` | K1 |
 `field2` | K2 |
 
-**Returns:** T[K1][K2] \| *undefined*
+**Returns:** [*V2*](README.md#v2)<T, K1, K2\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3): T[K1][K2][K3] \| *undefined*
+▸ **get**<T, K1, K2, K3\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3): [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
 
 #### Parameters:
 
@@ -730,19 +730,19 @@ Name | Type |
 `field2` | K2 |
 `field3` | K3 |
 
-**Returns:** T[K1][K2][K3] \| *undefined*
+**Returns:** [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3, K4\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): T[K1][K2][K3][K4] \| *undefined*
+▸ **get**<T, K1, K2, K3, K4\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): [*V4*](README.md#v4)<T, K1, K2, K3, K4\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
 
 #### Parameters:
 
@@ -754,20 +754,20 @@ Name | Type |
 `field3` | K3 |
 `field4` | K4 |
 
-**Returns:** T[K1][K2][K3][K4] \| *undefined*
+**Returns:** [*V4*](README.md#v4)<T, K1, K2, K3, K4\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3, K4, K5\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): T[K1][K2][K3][K4][K5] \| *undefined*
+▸ **get**<T, K1, K2, K3, K4, K5\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): [*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
 
 #### Parameters:
 
@@ -780,21 +780,21 @@ Name | Type |
 `field4` | K4 |
 `field5` | K5 |
 
-**Returns:** T[K1][K2][K3][K4][K5] \| *undefined*
+**Returns:** [*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3, K4, K5, K6\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): T[K1][K2][K3][K4][K5][K6] \| *undefined*
+▸ **get**<T, K1, K2, K3, K4, K5, K6\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): [*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
 
 #### Parameters:
 
@@ -808,22 +808,22 @@ Name | Type |
 `field5` | K5 |
 `field6` | K6 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6] \| *undefined*
+**Returns:** [*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3, K4, K5, K6, K7\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): T[K1][K2][K3][K4][K5][K6][K7] \| *undefined*
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): [*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
 
 #### Parameters:
 
@@ -838,23 +838,23 @@ Name | Type |
 `field6` | K6 |
 `field7` | K7 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7] \| *undefined*
+**Returns:** [*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): T[K1][K2][K3][K4][K5][K6][K7][K8] \| *undefined*
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): [*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
 
 #### Parameters:
 
@@ -870,24 +870,24 @@ Name | Type |
 `field7` | K7 |
 `field8` | K8 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8] \| *undefined*
+**Returns:** [*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| *undefined*
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): [*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
-`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
 
 #### Parameters:
 
@@ -904,25 +904,25 @@ Name | Type |
 `field8` | K8 |
 `field9` | K9 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| *undefined*
+**Returns:** [*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\> \| *undefined*
 
-▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| *undefined*
+▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): [*V10*](README.md#v10)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
-`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
-`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
+`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
 
 #### Parameters:
 
@@ -940,25 +940,25 @@ Name | Type |
 `field9` | K9 |
 `field10` | K10 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| *undefined*
+**Returns:** [*V10*](README.md#v10)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\> \| *undefined*
 
 ▸ **get**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): *any* \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
-`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
-`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
+`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
 
 #### Parameters:
 
@@ -984,15 +984,15 @@ ___
 
 ### getOrDef
 
-▸ **getOrDef**<T, F, K1\>(`source`: T, `fallback`: F, `field1`: K1): T[K1] \| F
+▸ **getOrDef**<T, F, K1\>(`source`: T, `fallback`: F, `field1`: K1): [*V*](README.md#v)<T, K1\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
 
 #### Parameters:
 
@@ -1002,18 +1002,18 @@ Name | Type |
 `fallback` | F |
 `field1` | K1 |
 
-**Returns:** T[K1] \| F
+**Returns:** [*V*](README.md#v)<T, K1\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2): T[K1][K2] \| F
+▸ **getOrDef**<T, F, K1, K2\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2): [*V2*](README.md#v2)<T, K1, K2\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
 
 #### Parameters:
 
@@ -1024,44 +1024,43 @@ Name | Type |
 `field1` | K1 |
 `field2` | K2 |
 
-**Returns:** T[K1][K2] \| F
+**Returns:** [*V2*](README.md#v2)<T, K1, K2\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3): T[K1][K2][K3] \| F
+▸ **getOrDef**<T, F, K1, K2, K3\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3): [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
 
 #### Parameters:
 
 Name | Type |
 ------ | ------ |
 `source` | T |
-`fallback` | F |
 `field1` | K1 |
 `field2` | K2 |
 `field3` | K3 |
 
-**Returns:** T[K1][K2][K3] \| F
+**Returns:** [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): T[K1][K2][K3][K4] \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): [*V4*](README.md#v4)<T, K1, K2, K3, K4\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
 
 #### Parameters:
 
@@ -1074,21 +1073,21 @@ Name | Type |
 `field3` | K3 |
 `field4` | K4 |
 
-**Returns:** T[K1][K2][K3][K4] \| F
+**Returns:** [*V4*](README.md#v4)<T, K1, K2, K3, K4\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4, K5\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): T[K1][K2][K3][K4][K5] \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): [*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
 
 #### Parameters:
 
@@ -1102,22 +1101,22 @@ Name | Type |
 `field4` | K4 |
 `field5` | K5 |
 
-**Returns:** T[K1][K2][K3][K4][K5] \| F
+**Returns:** [*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): T[K1][K2][K3][K4][K5][K6] \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): [*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
 
 #### Parameters:
 
@@ -1132,23 +1131,23 @@ Name | Type |
 `field5` | K5 |
 `field6` | K6 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6] \| F
+**Returns:** [*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): T[K1][K2][K3][K4][K5][K6][K7] \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): [*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
 
 #### Parameters:
 
@@ -1164,24 +1163,24 @@ Name | Type |
 `field6` | K6 |
 `field7` | K7 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7] \| F
+**Returns:** [*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): T[K1][K2][K3][K4][K5][K6][K7][K8] \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): [*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
 
 #### Parameters:
 
@@ -1198,25 +1197,25 @@ Name | Type |
 `field7` | K7 |
 `field8` | K8 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8] \| F
+**Returns:** [*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): [*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
-`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
 
 #### Parameters:
 
@@ -1234,26 +1233,26 @@ Name | Type |
 `field8` | K8 |
 `field9` | K9 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9] \| F
+**Returns:** [*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): [*V10*](README.md#v10)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
-`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
-`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
+`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
 
 #### Parameters:
 
@@ -1272,26 +1271,26 @@ Name | Type |
 `field9` | K9 |
 `field10` | K10 |
 
-**Returns:** T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10] \| F
+**Returns:** [*V10*](README.md#v10)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): *any* \| F
+▸ **getOrDef**<T, F, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): *any* \| *undefined*
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`F` | - | - |
-`K1` | *string* \| *number* \| *symbol* | keyof T |
-`K2` | *string* \| *number* \| *symbol* | keyof T[K1] |
-`K3` | *string* \| *number* \| *symbol* | keyof T[K1][K2] |
-`K4` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3] |
-`K5` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4] |
-`K6` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5] |
-`K7` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6] |
-`K8` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7] |
-`K9` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8] |
-`K10` | *string* \| *number* \| *symbol* | keyof T[K1][K2][K3][K4][K5][K6][K7][K8][K9] |
+Name | Type |
+------ | ------ |
+`T` | - |
+`F` | - |
+`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
+`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
 
 #### Parameters:
 
@@ -1312,7 +1311,7 @@ Name | Type |
 `field11` | [*FieldType*](README.md#fieldtype) |
 `...others` | [*FieldType*](README.md#fieldtype)[] |
 
-**Returns:** *any* \| F
+**Returns:** *any* \| *undefined*
 
 ___
 

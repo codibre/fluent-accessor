@@ -1,4 +1,4 @@
-[fluent-iterable - v1.1.0](../README.md) / PropertyAccessor
+[fluent-iterable - v1.1.1](../README.md) / PropertyAccessor
 
 # Interface: PropertyAccessor<Input, Output\>
 
@@ -12,6 +12,8 @@ Name |
 ## Hierarchy
 
 * **PropertyAccessor**
+
+  ↳ [*BaseExpression*](baseexpression.md)
 
 ## Callable
 

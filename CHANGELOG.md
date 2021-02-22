@@ -1,5 +1,12 @@
 
-## 1.1.1
+## 1.2.0
+* 1416d5e creating first and last operations
+* 01e9865 backing up
+* d4690c5 experimenting
+* 01d1f2c keeping exploration
+* ea41743 creating operators
+## v1.1.1
+* 7ab1b3d 1.1.1
 * 7d145b9 fixing return type for methods with property params
 ## v1.1.0
 * 66b7ec8 1.1.0

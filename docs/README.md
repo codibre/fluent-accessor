@@ -6,9 +6,7 @@ fluent-iterable - v1.2.0
 
 ### Interfaces
 
-- [AsyncPropertyAccessor](interfaces/asyncpropertyaccessor.md)
 - [BaseExpression](interfaces/baseexpression.md)
-- [NestedNavigator](interfaces/nestednavigator.md)
 - [PropertyAccessor](interfaces/propertyaccessor.md)
 
 ### Type aliases
@@ -70,7 +68,7 @@ ___
 
 ### ExtenderExpression
 
-Ƭ **ExtenderExpression**<Input, Output\>: { [key in keyof Output]: ExtenderExpression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22634`: () => [*FieldType*](README.md#fieldtype)<*unknown*\>[] ; `__@mapTo@22619`: <T\>(`mapper`: (`a`: Output) => T) => [*ExtenderExpression*](README.md#extenderexpression)<Input, T\>  }
+Ƭ **ExtenderExpression**<Input, Output\>: { [key in keyof Output]: ExtenderExpression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22628`: () => [*FieldType*](README.md#fieldtype)<*unknown*\>[] ; `__@mapTo@22619`: <T\>(`mapper`: (`a`: Output) => T) => [*ExtenderExpression*](README.md#extenderexpression)<Input, T\>  }
 
 #### Type parameters:
 

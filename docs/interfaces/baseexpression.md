@@ -38,15 +38,15 @@ Name | Type |
 
 ### Methods
 
-- [\_\_@jsonPathSymbol@22634](baseexpression.md#__@jsonpathsymbol@22634)
+- [\_\_@jsonPathSymbol@22628](baseexpression.md#__@jsonpathsymbol@22628)
 - [extend](baseexpression.md#extend)
 - [jsonPath](baseexpression.md#jsonpath)
 
 ## Methods
 
-### \_\_@jsonPathSymbol@22634
+### \_\_@jsonPathSymbol@22628
 
-▸ **__@jsonPathSymbol@22634**(): [*FieldType*](../README.md#fieldtype)<*unknown*\>[]
+▸ **__@jsonPathSymbol@22628**(): [*FieldType*](../README.md#fieldtype)<*unknown*\>[]
 
 **Returns:** [*FieldType*](../README.md#fieldtype)<*unknown*\>[]
 

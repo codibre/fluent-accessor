@@ -28,7 +28,7 @@ describe('$', () => {
     };
     const path = $<Something>().cd[0].a.c;
 
-    const result = path(something);
+    const result: number = path(something);
 
     expect(result).to.be.eq(7);
   });
@@ -40,7 +40,7 @@ describe('$', () => {
     };
     const path = $<Something>().cd[0].a.c;
 
-    const result = path(something, 'error');
+    const result: number | 'error' = path(something, 'error');
 
     expect(result).to.be.eq('error');
   });
@@ -81,7 +81,7 @@ describe('$', () => {
       return f(something);
     }
 
-    const result = test($('cd', '0', 'a', 'c'));
+    const result: number = test($('cd', '0', 'a', 'c'));
 
     expect(result).to.be.eq(7);
   });

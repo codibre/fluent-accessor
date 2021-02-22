@@ -10,7 +10,7 @@ describe(applyFallback.name, () => {
         },
       },
     };
-    const callback = $<any>().extend().a.b.c.e.f;
+    const callback = $<any>().a.b.c.e.f;
 
     const applyResult = applyFallback(callback, 123);
     const result = callback(a);

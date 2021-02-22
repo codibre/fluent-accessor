@@ -15,7 +15,10 @@ export interface MaxFunction {
    * @param mapper The function which projects the elements of the iterable into comparable values. Falls back to the identity function if omitted.
    * @returns The maximum of the iterable's projected elements.
    */
-  <T, R = ItemType<T>>(mapper: Mapper<T, R>): PropertyMapper<Iterable<T>, T | undefined>;
+  <T, R = ItemType<T>>(mapper: Mapper<T, R>): PropertyMapper<
+    Iterable<T>,
+    T | undefined
+  >;
 
   /**
    * Finds the numeric maximum element of the iterable using a projection. This is a resolving operation, will cause a full loop through all the elements of the iterable.<br>

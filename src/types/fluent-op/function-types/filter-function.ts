@@ -1,8 +1,9 @@
 import { Expression } from '../../expression';
 import { AsyncPredicate, Predicate } from 'augmentative-iterable';
-import { FluentOp, AsyncFluentOp } from '../base';
+import { AsyncFluentOp } from '../base';
 import { FluentIterable } from '@codibre/fluent-iterable';
 import { ItemType } from '@codibre/fluent-iterable/dist/types';
+import { PropertyMapper } from '../../property-mapper';
 
 export interface FilterFunction {
   /**
@@ -11,7 +12,7 @@ export interface FilterFunction {
    * @param predicate A predicate of `T`. All elements are yielded from the iterable against which this evaluates to `true`.
    * @returns A [[FluentIterable]] of the elements against which the predicate evaluates to `true`.
    */
-  <T extends Iterable<ItemType<T>>>(predicate: Predicate<ItemType<T>>): Expression<T, FluentIterable<ItemType<T>>>;
+  <T>(predicate: Predicate<T>): PropertyMapper<Iterable<T>, FluentIterable<T>>;
   /**
    * Filters the iterable of `T` based on a predicate.<br>
    *   Example: `fluent(['anchor', 'almond', 'bound', 'alpine']).filter(word => word[0] === 'a')` yields *anchor*, *almond*, and *alpine*.

@@ -1,4 +1,4 @@
-import { BaseExpression } from '../types';
+import { BaseExpression, Expression, ExtenderExpression } from '../types';
 import { getFactory } from '../internal';
 import { FieldType } from '../types';
 import { getProxy } from '../internal/get-proxy';
@@ -17,15 +17,12 @@ import {
 } from '../types/chained-mappers';
 import { constant } from '../internal/constant';
 
-export function $<T>(): BaseExpression<T, T>;
-export function $<T, K1 extends K<T>>(
+export function $<T>(): ExtenderExpression<T, T>;
+export function $<T, K1 extends K<T>>(field1: K1): BaseExpression<T, V<T, K1>>;
+export function $<T, K1 extends K<T>, K2 extends K<V<T, K1>>>(
   field1: K1,
-): BaseExpression<T, V<T, K1>>;
-export function $<
-  T,
-  K1 extends K<T>,
-  K2 extends K<V<T, K1>>,
->(field1: K1, field2: K2): BaseExpression<T, V2<T, K1, K2>>;
+  field2: K2,
+): BaseExpression<T, V2<T, K1, K2>>;
 export function $<
   T,
   K1 extends K<T>,
@@ -143,8 +140,8 @@ export function $<
   K5 extends K<V4<T, K1, K2, K3, K4>>,
   K6 extends K<V5<T, K1, K2, K3, K4, K5>>,
   K7 extends K<V6<T, K1, K2, K3, K4, K5, K6>>,
-  K8 extends K<V7<T, K1, K2, K3, K4, K5, K6, K7>> ,
-  K9 extends K<V8<T, K1, K2, K3, K4, K5, K6, K7, K8>> ,
+  K8 extends K<V7<T, K1, K2, K3, K4, K5, K6, K7>>,
+  K9 extends K<V8<T, K1, K2, K3, K4, K5, K6, K7, K8>>,
   K10 extends K<V9<T, K1, K2, K3, K4, K5, K6, K7, K8, K9>>
 >(
   field1: K1,
@@ -184,9 +181,13 @@ export function $<
   field11: FieldType,
   ...others: FieldType[]
 ): BaseExpression<T, any>;
-export function $<T>(...fields: FieldType[]): BaseExpression<T, unknown> {
+export function $<T>(...fields: FieldType[]): Expression<T, unknown> {
   const baseFunc = getFactory(fields) as BaseExpression<any, unknown>;
+  const extend = () => getProxy(fields, baseFunc);
+  if (fields.length === 0) {
+    return extend();
+  }
   baseFunc.jsonPath = constant(fields);
-  baseFunc.extend = () => getProxy(fields, baseFunc);
+  baseFunc.extend = extend;
   return baseFunc;
 }

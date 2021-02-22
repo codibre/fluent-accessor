@@ -1,5 +1,6 @@
+import { fluent, Mapper, Predicate } from '@codibre/fluent-iterable';
 import { expect } from 'chai';
-import { $, fluentOp, mapTo } from '../src';
+import { $, first, fluentOp, mapTo } from '../src';
 
 interface Something {
   ab: string;
@@ -26,7 +27,7 @@ describe('$', () => {
         },
       ],
     };
-    const path = $<Something>().extend().cd[0].a.c;
+    const path = $<Something>().cd[0].a.c;
 
     const result: number = path(something);
 
@@ -38,7 +39,7 @@ describe('$', () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().extend().cd[0].a.c;
+    const path = $<Something>().cd[0].a.c;
 
     const result: number | 'error' = path(something, 'error');
 
@@ -57,11 +58,9 @@ describe('$', () => {
         },
       ],
     };
-    const path = $<Something>()
-      .extend()
-      .cd[0].a[mapTo]((x) => {
-        return x.c * 2;
-      });
+    const path = $<Something>().cd[0].a[mapTo]((x) => {
+      return x.c * 2;
+    });
 
     const result: number = path(something);
 
@@ -80,11 +79,9 @@ describe('$', () => {
         },
       ],
     };
-    const path = $<Something>()
-      .extend()
-      .cd[0].a[mapTo]((x) => {
-        return x.c * 2;
-      });
+    const path = $<Something>().cd[0].a[mapTo]((x) => {
+      return x.c * 2;
+    });
 
     const result: number | 'error' = path(something, 'error');
 
@@ -104,11 +101,9 @@ describe('$', () => {
       ],
     };
     const expectedError = new Error('It will fail, champs');
-    const path = $<Something>()
-      .extend()
-      .cd[0].a[mapTo]((): number => {
-        throw expectedError;
-      });
+    const path = $<Something>().cd[0].a[mapTo]((): number => {
+      throw expectedError;
+    });
     let thrownError: any;
 
     try {
@@ -125,7 +120,7 @@ describe('$', () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().extend().cd[0].a.c;
+    const path = $<Something>().cd[0].a.c;
     let thrownError!: TypeError;
 
     try {
@@ -189,8 +184,8 @@ describe('$', () => {
       return f(something);
     }
 
-    const result = test($(fluentOp.filter((x) => x * 2)));
+    const result = test($(first));
 
-    expect(result).to.be.eq(3);
+    expect(result).to.be.eq(1);
   });
 });

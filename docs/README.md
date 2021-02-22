@@ -1,16 +1,18 @@
-fluent-iterable - v1.1.0
+fluent-iterable - v1.1.1
 
-# fluent-iterable - v1.1.0
+# fluent-iterable - v1.1.1
 
 ## Table of contents
 
 ### Interfaces
 
+- [BaseExpression](interfaces/baseexpression.md)
 - [PropertyAccessor](interfaces/propertyaccessor.md)
 
 ### Type aliases
 
 - [Expression](README.md#expression)
+- [ExtenderExpression](README.md#extenderexpression)
 - [FieldType](README.md#fieldtype)
 
 ### Variables
@@ -31,7 +33,20 @@ fluent-iterable - v1.1.0
 
 ### Expression
 
-Ƭ **Expression**<Input, Output\>: { [key in keyof Output]: Expression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22523`: () => (*string* \| *number* \| *symbol*)[]  }
+Ƭ **Expression**<Input, Output\>: [*BaseExpression*](interfaces/baseexpression.md)<Input, Output\> \| [*ExtenderExpression*](README.md#extenderexpression)<Input, Output\>
+
+#### Type parameters:
+
+Name | Default |
+------ | ------ |
+`Input` | - |
+`Output` | Input |
+
+___
+
+### ExtenderExpression
+
+Ƭ **ExtenderExpression**<Input, Output\>: { [key in keyof Output]: ExtenderExpression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22525`: () => (*string* \| *number* \| *symbol*)[] ; `__@mapTo@22516`: <T\>(`mapper`: (`a`: Output) => T) => [*ExtenderExpression*](README.md#extenderexpression)<Input, T\>  }
 
 #### Type parameters:
 
@@ -62,7 +77,7 @@ ___
 
 ### $
 
-▸ **$**<T\>(): [*Expression*](README.md#expression)<T\>
+▸ **$**<T\>(): [*ExtenderExpression*](README.md#extenderexpression)<T\>
 
 #### Type parameters:
 
@@ -70,9 +85,9 @@ Name |
 ------ |
 `T` |
 
-**Returns:** [*Expression*](README.md#expression)<T\>
+**Returns:** [*ExtenderExpression*](README.md#extenderexpression)<T\>
 
-▸ **$**<T, K1\>(`field1`: K1): [*Expression*](README.md#expression)<T, T[K1]\>
+▸ **$**<T, K1\>(`field1`: K1): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1]\>
 
 #### Type parameters:
 
@@ -87,9 +102,9 @@ Name | Type |
 ------ | ------ |
 `field1` | K1 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1]\>
 
-▸ **$**<T, K1, K2\>(`field1`: K1, `field2`: K2): [*Expression*](README.md#expression)<T, T[K1][K2]\>
+▸ **$**<T, K1, K2\>(`field1`: K1, `field2`: K2): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2]\>
 
 #### Type parameters:
 
@@ -106,9 +121,9 @@ Name | Type |
 `field1` | K1 |
 `field2` | K2 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2]\>
 
-▸ **$**<T, K1, K2, K3\>(`field1`: K1, `field2`: K2, `field3`: K3): [*Expression*](README.md#expression)<T, T[K1][K2][K3]\>
+▸ **$**<T, K1, K2, K3\>(`field1`: K1, `field2`: K2, `field3`: K3): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3]\>
 
 #### Type parameters:
 
@@ -127,9 +142,9 @@ Name | Type |
 `field2` | K2 |
 `field3` | K3 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3]\>
 
-▸ **$**<T, K1, K2, K3, K4\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4]\>
+▸ **$**<T, K1, K2, K3, K4\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4]\>
 
 #### Type parameters:
 
@@ -150,9 +165,9 @@ Name | Type |
 `field3` | K3 |
 `field4` | K4 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5]\>
+▸ **$**<T, K1, K2, K3, K4, K5\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5]\>
 
 #### Type parameters:
 
@@ -175,9 +190,9 @@ Name | Type |
 `field4` | K4 |
 `field5` | K5 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6]\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6]\>
 
 #### Type parameters:
 
@@ -202,9 +217,9 @@ Name | Type |
 `field5` | K5 |
 `field6` | K6 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6, K7\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7]\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6, K7\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7]\>
 
 #### Type parameters:
 
@@ -231,9 +246,9 @@ Name | Type |
 `field6` | K6 |
 `field7` | K7 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7][K8]\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7][K8]\>
 
 #### Type parameters:
 
@@ -262,9 +277,9 @@ Name | Type |
 `field7` | K7 |
 `field8` | K8 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7][K8]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7][K8]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9]\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9]\>
 
 #### Type parameters:
 
@@ -295,9 +310,9 @@ Name | Type |
 `field8` | K8 |
 `field9` | K9 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10]\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10): [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10]\>
 
 #### Type parameters:
 
@@ -330,9 +345,9 @@ Name | Type |
 `field9` | K9 |
 `field10` | K10 |
 
-**Returns:** [*Expression*](README.md#expression)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10]\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, T[K1][K2][K3][K4][K5][K6][K7][K8][K9][K10]\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): [*Expression*](README.md#expression)<T, *any*\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): [*BaseExpression*](interfaces/baseexpression.md)<T, *any*\>
 
 #### Type parameters:
 
@@ -367,7 +382,7 @@ Name | Type |
 `field11` | [*FieldType*](README.md#fieldtype) |
 `...others` | [*FieldType*](README.md#fieldtype)[] |
 
-**Returns:** [*Expression*](README.md#expression)<T, *any*\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, *any*\>
 
 ___
 

@@ -1,5 +1,8 @@
 
-## 1.1.0
+## 1.1.1
+* 7d145b9 fixing return type for methods with property params
+## v1.1.0
+* 66b7ec8 1.1.0
 ## v1.0.0
 * 21a2393 1.0.0
 * 29f587e fixing project description

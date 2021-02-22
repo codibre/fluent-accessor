@@ -1,12 +1,18 @@
+import { ItemType } from '@codibre/fluent-iterable/dist/types';
 import { PropertyMapper } from './property-mapper';
 
-export type O<T> = T extends keyof (infer R) ? R : never;
+export const first = Symbol('first');
+export const last = Symbol('first');
 
-export type K<T> = keyof T | PropertyMapper<T, any>;
+export type K<T> = keyof T | PropertyMapper<T, any> | typeof first;
 export type V<T, K1 extends K<T>> = K1 extends PropertyMapper<T, infer R>
   ? R
   : K1 extends keyof T
   ? T[K1]
+  : K1 extends typeof first
+  ? ItemType<T>
+  : K1 extends typeof last
+  ? ItemType<T>
   : never;
 export type V2<T, K1 extends K<T>, K2 extends K<V<T, K1>>> = V<V<T, K1>, K2>;
 export type V3<

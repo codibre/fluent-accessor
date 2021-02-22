@@ -14,7 +14,7 @@ describe(jsonPath.name, () => {
         },
       ],
     };
-    const path = $<typeof something>().extend().cd[0].a.c;
+    const path = $<typeof something>().cd[0].a.c;
 
     const result = Array.from(jsonPath(path));
 

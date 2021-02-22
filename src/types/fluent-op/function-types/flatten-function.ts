@@ -1,7 +1,11 @@
 import { Expression } from '../../expression';
 import { AsyncMapper, Mapper } from 'augmentative-iterable';
 import { FluentOp, AsyncFluentOp } from '../base';
-import { AsyncItemType, FluentIterable, ItemType } from '@codibre/fluent-iterable/dist/types';
+import {
+  AsyncItemType,
+  FluentIterable,
+  ItemType,
+} from '@codibre/fluent-iterable/dist/types';
 
 export interface FlattenFunction {
   /**
@@ -22,7 +26,10 @@ export interface FlattenFunction {
    * @param mapper Specifies the projection from the elements of `T` to iterables of `R`. Identity mapping is applied (taking the elements as iterables) if omitted.
    * @returns The [[FluentIterable]] of the flattened iterable.
    */
-  <T, R>(mapper: Mapper<T, Iterable<R>>): Expression<Iterable<T>, FluentIterable<R>>;
+  <T, R>(mapper: Mapper<T, Iterable<R>>): Expression<
+    Iterable<T>,
+    FluentIterable<R>
+  >;
   /**
    * Projects each element of the iterable to an iterable and flattens the resulting iterable into one iterable.<br>
    * Examples:<br>

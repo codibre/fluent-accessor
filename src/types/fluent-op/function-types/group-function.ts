@@ -2,7 +2,10 @@ import { Expression } from '../../expression';
 import { AsyncMapper, Mapper } from 'augmentative-iterable';
 import { FluentGroup } from '@codibre/fluent-iterable';
 import { FluentOp, AsyncFluentOp } from '../base';
-import { FluentIterable, KVGroupTransform } from '@codibre/fluent-iterable/dist/types';
+import {
+  FluentIterable,
+  KVGroupTransform,
+} from '@codibre/fluent-iterable/dist/types';
 
 export interface GroupFunction {
   /**

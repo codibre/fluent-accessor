@@ -19,7 +19,10 @@ export interface MapFunction {
    * @param mapper The operation which maps an instance of `T` into an instance of `R`.
    * @returns A [[FluentIterable]] of the mapped elements.
    */
-  <T, R extends keyof T>(mapper: R): Expression<Iterable<T>, FluentIterable<T[R]>>;
+  <T, R extends keyof T>(mapper: R): Expression<
+    Iterable<T>,
+    FluentIterable<T[R]>
+  >;
 }
 export interface AsyncMapFunction {
   /**

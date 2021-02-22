@@ -8,7 +8,10 @@ export interface CombineFunction {
    * Join the iterable with another one, returning a new iterable with a NxN combination
    * @param iterable The iterable to be combined
    */
-  <T, U>(iterable: Iterable<U>): Expression<Iterable<T>, FluentIterable<[T, U]>>;
+  <T, U>(iterable: Iterable<U>): Expression<
+    Iterable<T>,
+    FluentIterable<[T, U]>
+  >;
 
   /**
    * Join the iterable with another one, returning a new iterable with the inner matching combinations

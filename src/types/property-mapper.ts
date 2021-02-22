@@ -1,1 +1,1 @@
-export type PropertyMapper<T, R = unknown> = (a: T) => R;
+export type PropertyMapper<T, R> = (a: T) => R;

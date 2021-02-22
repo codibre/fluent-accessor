@@ -10,7 +10,10 @@ export interface ConcatFunction {
    * @param iterables The iterables to concatenate.
    * @returns The [[FluentIterable]] of the concatenated iterables.
    */
-  <T>(...iterables: Array<Iterable<T>>): Expression<Iterable<T>, FluentIterable<T>>;
+  <T>(...iterables: Array<Iterable<T>>): Expression<
+    Iterable<T>,
+    FluentIterable<T>
+  >;
 }
 export interface AsyncConcatFunction {
   /**

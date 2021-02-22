@@ -1,5 +1,7 @@
+import { ItemType } from '@codibre/fluent-iterable/dist/types';
+import { Mapper } from 'augmentative-iterable';
 import { expect } from 'chai';
-import { $, fluentOp, mapTo } from '../src';
+import { $, fluentOp, mapTo, PropertyMapper } from '../src';
 
 interface Something {
   ab: string;
@@ -150,7 +152,7 @@ describe('$', () => {
       return f(something);
     }
 
-    const result = test($('cd', '0', 'a', 'c'));
+    const result = test($());
 
     expect(result).to.be.eq(7);
   });
@@ -177,23 +179,13 @@ describe('$', () => {
   });
 
   it('should work using a fluent operation', () => {
-    const something = {
-      a: {
-        b: {
-          c: [1, 3, 2],
-        },
-      },
-    };
-    const callback = $<typeof something>().a.b.c[mapTo](
-      fluentOp.filter((x) => x % 2 === 0),
-    );
+    const something = [1, 3, 2];
 
-    function test<T>(f: (a: typeof something) => T) {
+    function test<T>(f: (a: number[]) => T) {
       return f(something);
     }
 
-
-    const result = test($('a', 'b', 'c', fluentOp.max()));
+    const result = test($(fluentOp.max()));
 
     expect(result).to.be.eq(3);
   });

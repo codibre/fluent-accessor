@@ -1,8 +1,8 @@
 import { PropertyMapper } from './property-mapper';
 
-export type O<T> = T extends keyof infer R ? R : never;
+export type O<T> = T extends keyof (infer R) ? R : never;
 
-export type K<T> = keyof T;
+export type K<T> = keyof T | PropertyMapper<T, any>;
 export type V<T, K1 extends K<T>> = K1 extends PropertyMapper<T, infer R>
   ? R
   : K1 extends keyof T

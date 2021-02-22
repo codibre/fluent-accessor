@@ -26,7 +26,7 @@ describe(setStrictness.name, () => {
         },
       ],
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
     setStrictness(path, true);
 
     const result = path(something);
@@ -39,7 +39,7 @@ describe(setStrictness.name, () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
     setStrictness(path, true);
 
     const result = path(something, 'error');
@@ -52,7 +52,7 @@ describe(setStrictness.name, () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
     setStrictness(path, true);
     let thrownError!: TypeError;
 
@@ -73,7 +73,7 @@ describe(setStrictness.name, () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
     setStrictness(path, false);
 
     const result = path(something, 'error');
@@ -86,7 +86,7 @@ describe(setStrictness.name, () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
     const strictnessResult = setStrictness(path, false);
 
     const result = path(something);

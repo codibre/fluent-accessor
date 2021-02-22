@@ -1,7 +1,5 @@
-import { ItemType } from '@codibre/fluent-iterable/dist/types';
-import { Mapper } from 'augmentative-iterable';
 import { expect } from 'chai';
-import { $, fluentOp, mapTo, PropertyMapper } from '../src';
+import { $, fluentOp, mapTo } from '../src';
 
 interface Something {
   ab: string;
@@ -28,9 +26,9 @@ describe('$', () => {
         },
       ],
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
 
-    const result = path(something);
+    const result: number = path(something);
 
     expect(result).to.be.eq(7);
   });
@@ -40,9 +38,9 @@ describe('$', () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
 
-    const result = path(something, 'error');
+    const result: number | 'error' = path(something, 'error');
 
     expect(result).to.be.eq('error');
   });
@@ -59,11 +57,13 @@ describe('$', () => {
         },
       ],
     };
-    const path = $<Something>().cd[0].a[mapTo]((x) => {
-      return x.c * 2;
-    });
+    const path = $<Something>()
+      .extend()
+      .cd[0].a[mapTo]((x) => {
+        return x.c * 2;
+      });
 
-    const result = path(something);
+    const result: number = path(something);
 
     expect(result).to.be.eq(14);
   });
@@ -80,11 +80,13 @@ describe('$', () => {
         },
       ],
     };
-    const path = $<Something>().cd[0].a[mapTo]((x) => {
-      return x.c * 2;
-    });
+    const path = $<Something>()
+      .extend()
+      .cd[0].a[mapTo]((x) => {
+        return x.c * 2;
+      });
 
-    const result = path(something, 'error');
+    const result: number | 'error' = path(something, 'error');
 
     expect(result).to.be.eq(14);
   });
@@ -102,9 +104,11 @@ describe('$', () => {
       ],
     };
     const expectedError = new Error('It will fail, champs');
-    const path = $<Something>().cd[0].a[mapTo]((): number => {
-      throw expectedError;
-    });
+    const path = $<Something>()
+      .extend()
+      .cd[0].a[mapTo]((): number => {
+        throw expectedError;
+      });
     let thrownError: any;
 
     try {
@@ -121,7 +125,7 @@ describe('$', () => {
       ab: 'ab value',
       cd: [] as any,
     };
-    const path = $<Something>().cd[0].a.c;
+    const path = $<Something>().extend().cd[0].a.c;
     let thrownError!: TypeError;
 
     try {
@@ -152,7 +156,7 @@ describe('$', () => {
       return f(something);
     }
 
-    const result = test($());
+    const result: number = test($('cd', 0, 'a', 'c'));
 
     expect(result).to.be.eq(7);
   });
@@ -173,7 +177,7 @@ describe('$', () => {
       return f(something);
     }
 
-    const result = test($('cd', '0', 'a', (x) => x.c * 2));
+    const result: number = test($('cd', '0', 'a', (x) => x.c * 2));
 
     expect(result).to.be.eq(14);
   });
@@ -185,7 +189,7 @@ describe('$', () => {
       return f(something);
     }
 
-    const result = test($(fluentOp.max()));
+    const result = test($(fluentOp.filter((x) => x * 2)));
 
     expect(result).to.be.eq(3);
   });

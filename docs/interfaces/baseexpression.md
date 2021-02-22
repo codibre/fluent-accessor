@@ -1,4 +1,4 @@
-[fluent-iterable - v1.2.0](../README.md) / BaseExpression
+[fluent-iterable - v1.2.1](../README.md) / BaseExpression
 
 # Interface: BaseExpression<Input, Output\>
 

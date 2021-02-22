@@ -1,5 +1,9 @@
 
-## 1.2.0
+## 1.2.1
+* d16cad7 fixing get and getOrDef
+* a4102f7 removing unused files
+## v1.2.0
+* bae97df 1.2.0
 * 1416d5e creating first and last operations
 * 01e9865 backing up
 * d4690c5 experimenting

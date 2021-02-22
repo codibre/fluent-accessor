@@ -1,6 +1,5 @@
-import { fluent, Mapper, Predicate } from '@codibre/fluent-iterable';
 import { expect } from 'chai';
-import { $, first, fluentOp, mapTo } from '../src';
+import { $, baseOp, mapTo } from '../src';
 
 interface Something {
   ab: string;
@@ -177,15 +176,85 @@ describe('$', () => {
     expect(result).to.be.eq(14);
   });
 
-  it('should work using a fluent operation', () => {
+  it('should work using first operation with an array', () => {
     const something = [1, 3, 2];
 
     function test<T>(f: (a: number[]) => T) {
       return f(something);
     }
 
-    const result = test($(first));
+    const result = test($(baseOp.first));
 
     expect(result).to.be.eq(1);
+  });
+
+  it('should work using first operation with an iterable', () => {
+    const something = new Set([1, 3, 2]);
+
+    function test<T>(f: (a: typeof something) => T) {
+      return f(something);
+    }
+
+    const result = test($(baseOp.first));
+
+    expect(result).to.be.eq(1);
+  });
+
+  it('should throw an error when first is used with a non iterable object', () => {
+    const something = [1, 3, 2];
+
+    function test<T>(f: (a: number[]) => T) {
+      return f(something);
+    }
+    let thrownErr: any;
+
+    try {
+      test($(0, baseOp.first));
+    } catch (err) {
+      thrownErr = err;
+    }
+
+    expect(thrownErr).to.be.instanceOf(Error);
+  });
+
+  it('should work using last operation with an array', () => {
+    const something = [1, 3, 2];
+
+    function test<T>(f: (a: number[]) => T) {
+      return f(something);
+    }
+
+    const result = test($(baseOp.last));
+
+    expect(result).to.be.eq(2);
+  });
+
+  it('should work using last operation with an iterable', () => {
+    const something = new Set([1, 3, 2]);
+
+    function test<T>(f: (a: typeof something) => T) {
+      return f(something);
+    }
+
+    const result = test($(baseOp.last));
+
+    expect(result).to.be.eq(2);
+  });
+
+  it('should throw an error when last is used with a non iterable object', () => {
+    const something = [1, 3, 2];
+
+    function test<T>(f: (a: number[]) => T) {
+      return f(something);
+    }
+    let thrownErr: any;
+
+    try {
+      test($(0, baseOp.last));
+    } catch (err) {
+      thrownErr = err;
+    }
+
+    expect(thrownErr).to.be.instanceOf(Error);
   });
 });

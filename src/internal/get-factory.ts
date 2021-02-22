@@ -1,15 +1,53 @@
-import {
-  FieldType,
-  first,
-  last,
-  PropertyAccessor,
-  PropertyMapper,
-} from '../types';
+import { baseOp, FieldType, PropertyAccessor, PropertyMapper } from '../types';
 import { none } from '../lib/none';
 import { fallback } from './fallback';
-import { fluent } from '@codibre/fluent-iterable';
 
 export const strictCheck = Symbol('strictCheck');
+
+function first<T>(iterable: Iterable<T>) {
+  const it = iterable[Symbol.iterator]();
+  const result = it.next();
+  it.return?.();
+  return result.value;
+}
+
+function arrayFirst(x: Array<any>): any {
+  return x[0];
+}
+
+function last<T>(iterable: Iterable<T>) {
+  const it = iterable[Symbol.iterator]();
+  let next = it.next();
+  let value: T | undefined = undefined;
+  while (!next.done) {
+    value = next.value;
+    next = it.next();
+  }
+  it.return?.();
+  return value;
+}
+
+function arrayLast(x: Array<any>): any {
+  return x[x.length - 1];
+}
+
+function isIterable(a: unknown): a is Iterable<any> {
+  return a === '' || (!!a && typeof (a as any)[Symbol.iterator] === 'function');
+}
+
+function getIterableValue(
+  value: unknown,
+  arrayExtractor: (it: Array<any>) => any,
+  iterableExtractor: (it: Iterable<any>) => any,
+): any {
+  if (Array.isArray(value)) {
+    return arrayExtractor(value);
+  }
+  if (isIterable(value)) {
+    return iterableExtractor(value);
+  }
+  throw new Error('value it not an Iterable!');
+}
 
 function resolve(
   prop: FieldType,
@@ -17,14 +55,10 @@ function resolve(
 ): prop is PropertyMapper<any, any> {
   if (typeof prop === 'function') {
     wrapper.result = prop(wrapper.result);
-  } else if (prop === first) {
-    wrapper.result = Array.isArray(wrapper.result)
-      ? wrapper.result[0]
-      : fluent(wrapper.result).first();
-  } else if (prop === last) {
-    wrapper.result = Array.isArray(wrapper.result)
-      ? wrapper.result[wrapper.result.length - 1]
-      : fluent(wrapper.result).last();
+  } else if (prop === baseOp.first) {
+    wrapper.result = getIterableValue(wrapper.result, arrayFirst, first);
+  } else if (prop === baseOp.last) {
+    wrapper.result = getIterableValue(wrapper.result, arrayLast, last);
   } else {
     return false;
   }

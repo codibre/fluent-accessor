@@ -162,13 +162,11 @@ Let's assume that, in the example above, nestedFoo is a number. The accessor gen
 You also have some custom built in mappers, like:
 
 ```ts
-someFunc($('foo', 'nestedFoo', 'foo', 'nestedFoo', max());
-someFunc($('foo', 'nestedFoo', 'foo', 'nestedFoo', min());
-someFunc($('foo', 'nestedFoo', 'foo', 'nestedFoo', first());
-someFunc($('foo', 'nestedFoo', 'foo', 'nestedFoo', last());
+someFunc($('foo', 'nestedFoo', 'foo', 'nestedFoo', baseOp.first);
+someFunc($('foo', 'nestedFoo', 'foo', 'nestedFoo', baseOp.last);
 ```
 
-In the examples above, nestedFoo need to be an iterable, otherwise the typing will accuse an error.
+In the examples above, nestedFoo need to be an iterable, otherwise the typing will throw an error.
 
 ## License
 

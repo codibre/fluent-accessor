@@ -1,11 +1,8 @@
 import { baseOp, BaseOpType } from './base-op';
-import { PropertyMapper } from './property-mapper';
 
 export type ItemType<T> = T extends Iterable<infer R> ? R : never;
-export type K<T> = keyof T | PropertyMapper<T, any> | BaseOpType;
-export type V<T, K1 extends K<T>> = K1 extends PropertyMapper<T, infer R>
-  ? R
-  : K1 extends keyof T
+export type K<T> = keyof T | BaseOpType;
+export type V<T, K1 extends K<T>> = K1 extends keyof T
   ? T[K1]
   : K1 extends typeof baseOp.first
   ? ItemType<T>

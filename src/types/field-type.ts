@@ -1,7 +1,1 @@
-import { PropertyMapper } from './property-mapper';
-
-export type FieldType<R = unknown> =
-  | string
-  | number
-  | symbol
-  | PropertyMapper<unknown, R>;
+export type FieldType = string | number | symbol;

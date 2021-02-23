@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { $, baseOp, mapTo } from '../src';
+import { $, baseOp } from '../src';
 
 interface Something {
   ab: string;
@@ -45,75 +45,6 @@ describe('$', () => {
     expect(result).to.be.eq('error');
   });
 
-  it('should working passing an mapper function with no fallback', () => {
-    const something: Something = {
-      ab: 'ab value',
-      cd: [
-        {
-          a: {
-            c: 7,
-          },
-          b: 1,
-        },
-      ],
-    };
-    const path = $<Something>().cd[0].a[mapTo]((x) => {
-      return x.c * 2;
-    });
-
-    const result: number = path(something);
-
-    expect(result).to.be.eq(14);
-  });
-
-  it('should working passing an mapper function with fallback', () => {
-    const something: Something = {
-      ab: 'ab value',
-      cd: [
-        {
-          a: {
-            c: 7,
-          },
-          b: 1,
-        },
-      ],
-    };
-    const path = $<Something>().cd[0].a[mapTo]((x) => {
-      return x.c * 2;
-    });
-
-    const result: number | 'error' = path(something, 'error');
-
-    expect(result).to.be.eq(14);
-  });
-
-  it('should thrown an error when an mapper throws an error even with fallback', () => {
-    const something: Something = {
-      ab: 'ab value',
-      cd: [
-        {
-          a: {
-            c: 7,
-          },
-          b: 1,
-        },
-      ],
-    };
-    const expectedError = new Error('It will fail, champs');
-    const path = $<Something>().cd[0].a[mapTo]((): number => {
-      throw expectedError;
-    });
-    let thrownError: any;
-
-    try {
-      path(something, 'error');
-    } catch (err) {
-      thrownError = err;
-    }
-
-    expect(thrownError).to.be.eq(expectedError);
-  });
-
   it('should throw a TypeError when path does not exist and fallback is set to none', () => {
     const something: Something = {
       ab: 'ab value',
@@ -155,27 +86,6 @@ describe('$', () => {
     expect(result).to.be.eq(7);
   });
 
-  it('should return the value of the item in the path using array mode and mapper', () => {
-    const something: Something = {
-      ab: 'ab value',
-      cd: [
-        {
-          a: {
-            c: 7,
-          },
-          b: 1,
-        },
-      ],
-    };
-    function test<T>(f: (a: Something) => T) {
-      return f(something);
-    }
-
-    const result: number = test($('cd', '0', 'a', (x) => x.c * 2));
-
-    expect(result).to.be.eq(14);
-  });
-
   it('should work using first operation with an array', () => {
     const something = [1, 3, 2];
 
@@ -191,8 +101,8 @@ describe('$', () => {
   it('should work using first operation with an iterable', () => {
     const something = new Set([1, 3, 2]);
 
-    function test<T>(f: (a: typeof something) => T) {
-      return f(something);
+    function test<T>(f: (a: typeof something, fallback: any) => T) {
+      return f(something, null);
     }
 
     const result = test($(baseOp.first));
@@ -203,8 +113,8 @@ describe('$', () => {
   it('should throw an error when first is used with a non iterable object', () => {
     const something = [1, 3, 2];
 
-    function test<T>(f: (a: number[]) => T) {
-      return f(something);
+    function test<T>(f: (a: number[], fallback: any) => T) {
+      return f(something, null);
     }
     let thrownErr: any;
 
@@ -220,8 +130,8 @@ describe('$', () => {
   it('should work using last operation with an array', () => {
     const something = [1, 3, 2];
 
-    function test<T>(f: (a: number[]) => T) {
-      return f(something);
+    function test<T>(f: (a: number[], fallback: any) => T) {
+      return f(something, null);
     }
 
     const result = test($(baseOp.last));
@@ -232,8 +142,8 @@ describe('$', () => {
   it('should work using last operation with an iterable', () => {
     const something = new Set([1, 3, 2]);
 
-    function test<T>(f: (a: typeof something) => T) {
-      return f(something);
+    function test<T>(f: (a: typeof something, fallback: any) => T) {
+      return f(something, null);
     }
 
     const result = test($(baseOp.last));
@@ -244,8 +154,8 @@ describe('$', () => {
   it('should throw an error when last is used with a non iterable object', () => {
     const something = [1, 3, 2];
 
-    function test<T>(f: (a: number[]) => T) {
-      return f(something);
+    function test<T>(f: (a: number[], fallback: any) => T) {
+      return f(something, null);
     }
     let thrownErr: any;
 

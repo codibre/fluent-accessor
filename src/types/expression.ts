@@ -1,5 +1,4 @@
 import { FieldType } from './field-type';
-import { mapTo } from './map-to';
 import { PropertyAccessor } from './property-accessor';
 import { jsonPathSymbol } from './symbols';
 
@@ -8,7 +7,6 @@ export type ExtenderExpression<Input, Output = Input> = {
 } &
   PropertyAccessor<Input, Output> & {
     [jsonPathSymbol](): FieldType[];
-    [mapTo]<T>(mapper: (a: Output) => T): ExtenderExpression<Input, T>;
   };
 
 export interface BaseExpression<Input, Output = Input>

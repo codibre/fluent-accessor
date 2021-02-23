@@ -1,4 +1,4 @@
-import { baseOp, FieldType, PropertyAccessor, PropertyMapper } from '../types';
+import { baseOp, FieldType, PropertyAccessor } from '../types';
 import { none } from '../lib/none';
 import { fallback } from './fallback';
 
@@ -49,13 +49,8 @@ function getIterableValue(
   throw new Error('value it not an Iterable!');
 }
 
-function resolve(
-  prop: FieldType,
-  wrapper: { result: any },
-): prop is PropertyMapper<any, any> {
-  if (typeof prop === 'function') {
-    wrapper.result = prop(wrapper.result);
-  } else if (prop === baseOp.first) {
+function resolve(prop: FieldType, wrapper: { result: any }): boolean {
+  if (prop === baseOp.first) {
     wrapper.result = getIterableValue(wrapper.result, arrayFirst, first);
   } else if (prop === baseOp.last) {
     wrapper.result = getIterableValue(wrapper.result, arrayLast, last);

@@ -1,5 +1,9 @@
 
-## 1.2.1
+## 1.2.2
+* 472f455 removing inconsistent feature
+* ae98c88 Merge pull request #7 from Codibre/operators
+## v1.2.1
+* 511f19c 1.2.1
 * d16cad7 fixing get and getOrDef
 * a4102f7 removing unused files
 ## v1.2.0

@@ -1,4 +1,4 @@
-[fluent-iterable - v1.2.1](../README.md) / BaseExpression
+[fluent-iterable - v1.2.2](../README.md) / BaseExpression
 
 # Interface: BaseExpression<Input, Output\>
 
@@ -38,17 +38,17 @@ Name | Type |
 
 ### Methods
 
-- [\_\_@jsonPathSymbol@22628](baseexpression.md#__@jsonpathsymbol@22628)
+- [\_\_@jsonPathSymbol@22608](baseexpression.md#__@jsonpathsymbol@22608)
 - [extend](baseexpression.md#extend)
 - [jsonPath](baseexpression.md#jsonpath)
 
 ## Methods
 
-### \_\_@jsonPathSymbol@22628
+### \_\_@jsonPathSymbol@22608
 
-▸ **__@jsonPathSymbol@22628**(): [*FieldType*](../README.md#fieldtype)<*unknown*\>[]
+▸ **__@jsonPathSymbol@22608**(): (*string* \| *number* \| *symbol*)[]
 
-**Returns:** [*FieldType*](../README.md#fieldtype)<*unknown*\>[]
+**Returns:** (*string* \| *number* \| *symbol*)[]
 
 ___
 
@@ -62,6 +62,6 @@ ___
 
 ### jsonPath
 
-▸ **jsonPath**(): [*FieldType*](../README.md#fieldtype)<*unknown*\>[]
+▸ **jsonPath**(): (*string* \| *number* \| *symbol*)[]
 
-**Returns:** [*FieldType*](../README.md#fieldtype)<*unknown*\>[]
+**Returns:** (*string* \| *number* \| *symbol*)[]

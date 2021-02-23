@@ -1,6 +1,6 @@
-fluent-iterable - v1.2.1
+fluent-iterable - v1.2.2
 
-# fluent-iterable - v1.2.1
+# fluent-iterable - v1.2.2
 
 ## Table of contents
 
@@ -17,7 +17,6 @@ fluent-iterable - v1.2.1
 - [FieldType](README.md#fieldtype)
 - [ItemType](README.md#itemtype)
 - [K](README.md#k)
-- [PropertyMapper](README.md#propertymapper)
 - [V](README.md#v)
 - [V10](README.md#v10)
 - [V2](README.md#v2)
@@ -33,7 +32,6 @@ fluent-iterable - v1.2.1
 
 - [baseOp](README.md#baseop)
 - [jsonPathSymbol](README.md#jsonpathsymbol)
-- [mapTo](README.md#mapto)
 - [none](README.md#none)
 
 ### Functions
@@ -68,7 +66,7 @@ ___
 
 ### ExtenderExpression
 
-Ƭ **ExtenderExpression**<Input, Output\>: { [key in keyof Output]: ExtenderExpression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22628`: () => [*FieldType*](README.md#fieldtype)<*unknown*\>[] ; `__@mapTo@22619`: <T\>(`mapper`: (`a`: Output) => T) => [*ExtenderExpression*](README.md#extenderexpression)<Input, T\>  }
+Ƭ **ExtenderExpression**<Input, Output\>: { [key in keyof Output]: ExtenderExpression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22608`: () => (*string* \| *number* \| *symbol*)[]  }
 
 #### Type parameters:
 
@@ -81,13 +79,7 @@ ___
 
 ### FieldType
 
-Ƭ **FieldType**<R\>: *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<*unknown*, R\>
-
-#### Type parameters:
-
-Name | Default |
------- | ------ |
-`R` | *unknown* |
+Ƭ **FieldType**: *string* \| *number* \| *symbol*
 
 ___
 
@@ -105,32 +97,19 @@ ___
 
 ### K
 
-Ƭ **K**<T\>: keyof T \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> \| [*BaseOpType*](README.md#baseoptype)
+Ƭ **K**<T\>: keyof T \| [*BaseOpType*](README.md#baseoptype)
 
 #### Type parameters:
 
 Name |
 ------ |
 `T` |
-
-___
-
-### PropertyMapper
-
-Ƭ **PropertyMapper**<T, R\>: (`a`: T) => R
-
-#### Type parameters:
-
-Name |
------- |
-`T` |
-`R` |
 
 ___
 
 ### V
 
-Ƭ **V**<T, K1\>: K1 *extends* [*PropertyMapper*](README.md#propertymapper)<T, *infer* R\> ? R : K1 *extends* keyof T ? T[K1] : K1 *extends* *typeof* [*first*](README.md#first) ? [*ItemType*](README.md#itemtype)<T\> : K1 *extends* *typeof* [*last*](README.md#last) ? [*ItemType*](README.md#itemtype)<T\> : *never*
+Ƭ **V**<T, K1\>: K1 *extends* keyof T ? T[K1] : K1 *extends* *typeof* [*first*](README.md#first) ? [*ItemType*](README.md#itemtype)<T\> : K1 *extends* *typeof* [*last*](README.md#last) ? [*ItemType*](README.md#itemtype)<T\> : *never*
 
 #### Type parameters:
 
@@ -322,12 +301,6 @@ ___
 
 ___
 
-### mapTo
-
-• `Const` **mapTo**: *typeof* [*mapTo*](README.md#mapto)
-
-___
-
 ### none
 
 • `Const` **none**: *typeof* [*none*](README.md#none)
@@ -353,7 +326,7 @@ Name |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -370,8 +343,8 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -389,9 +362,9 @@ Name | Type |
 Name | Type | Default |
 ------ | ------ | ------ |
 `T` | - | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> | - |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> | - |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>\> |
+`K1` | *string* \| *number* \| *symbol* | - |
+`K2` | *string* \| *number* \| *symbol* | - |
+`K3` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>\> |
 
 #### Parameters:
 
@@ -410,10 +383,10 @@ Name | Type |
 Name | Type | Default |
 ------ | ------ | ------ |
 `T` | - | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> | - |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> | - |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> | - |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>\> |
+`K1` | *string* \| *number* \| *symbol* | - |
+`K2` | *string* \| *number* \| *symbol* | - |
+`K3` | *string* \| *number* \| *symbol* | - |
+`K4` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>\> |
 
 #### Parameters:
 
@@ -433,11 +406,11 @@ Name | Type |
 Name | Type | Default |
 ------ | ------ | ------ |
 `T` | - | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> | - |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> | - |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> | - |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> | - |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>\> |
+`K1` | *string* \| *number* \| *symbol* | - |
+`K2` | *string* \| *number* \| *symbol* | - |
+`K3` | *string* \| *number* \| *symbol* | - |
+`K4` | *string* \| *number* \| *symbol* | - |
+`K5` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>\> |
 
 #### Parameters:
 
@@ -458,12 +431,12 @@ Name | Type |
 Name | Type | Default |
 ------ | ------ | ------ |
 `T` | - | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> | - |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> | - |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> | - |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> | - |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> | - |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>\> |
+`K1` | *string* \| *number* \| *symbol* | - |
+`K2` | *string* \| *number* \| *symbol* | - |
+`K3` | *string* \| *number* \| *symbol* | - |
+`K4` | *string* \| *number* \| *symbol* | - |
+`K5` | *string* \| *number* \| *symbol* | - |
+`K6` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>\> |
 
 #### Parameters:
 
@@ -485,13 +458,13 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -514,14 +487,14 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -545,15 +518,15 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -578,16 +551,16 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
-`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
+`K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -613,16 +586,16 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
-`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
+`K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -679,7 +652,7 @@ ___
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -697,8 +670,8 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -717,9 +690,9 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -739,10 +712,10 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -763,11 +736,11 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -789,12 +762,12 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -817,13 +790,13 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -847,14 +820,14 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -879,15 +852,15 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -913,16 +886,16 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
-`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
+`K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -949,16 +922,16 @@ Name | Type |
 Name | Type |
 ------ | ------ |
 `T` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
-`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
+`K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -992,7 +965,7 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1012,8 +985,8 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1034,9 +1007,9 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1057,10 +1030,10 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1083,11 +1056,11 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1111,12 +1084,12 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1141,13 +1114,13 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1173,14 +1146,14 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1207,15 +1180,15 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1243,16 +1216,16 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
-`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
+`K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1281,16 +1254,16 @@ Name | Type |
 ------ | ------ |
 `T` | - |
 `F` | - |
-`K1` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<T, *any*\> |
-`K2` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<T, K1\>, *any*\> |
-`K3` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, *any*\> |
-`K4` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, *any*\> |
-`K5` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, *any*\> |
-`K6` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, *any*\> |
-`K7` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, *any*\> |
-`K8` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, *any*\> |
-`K9` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, *any*\> |
-`K10` | *string* \| *number* \| *symbol* \| [*PropertyMapper*](README.md#propertymapper)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>, K6\>, K7\>, K8\>, K9\>, *any*\> |
+`K1` | *string* \| *number* \| *symbol* |
+`K2` | *string* \| *number* \| *symbol* |
+`K3` | *string* \| *number* \| *symbol* |
+`K4` | *string* \| *number* \| *symbol* |
+`K5` | *string* \| *number* \| *symbol* |
+`K6` | *string* \| *number* \| *symbol* |
+`K7` | *string* \| *number* \| *symbol* |
+`K8` | *string* \| *number* \| *symbol* |
+`K9` | *string* \| *number* \| *symbol* |
+`K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
@@ -1317,7 +1290,7 @@ ___
 
 ### jsonPath
 
-▸ **jsonPath**<T, R\>(`a`: [*Expression*](README.md#expression)<T, R\>): [*FieldType*](README.md#fieldtype)<*unknown*\>[]
+▸ **jsonPath**<T, R\>(`a`: [*Expression*](README.md#expression)<T, R\>): (*string* \| *number* \| *symbol*)[]
 
 Returns an iterable with the json path for the informed expression
 
@@ -1334,7 +1307,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `a` | [*Expression*](README.md#expression)<T, R\> | the expression to be analyzed   |
 
-**Returns:** [*FieldType*](README.md#fieldtype)<*unknown*\>[]
+**Returns:** (*string* \| *number* \| *symbol*)[]
 
 an iterable with the json path for the informed expression
 

@@ -18,7 +18,13 @@ export function getOrDef<
   K1 extends K<T>,
   K2 extends K<V<T, K1>>,
   K3 extends K<V2<T, K1, K2>>
->(source: T, field1: K1, field2: K2, field3: K3): V3<T, K1, K2, K3> | undefined;
+>(
+  source: T,
+  fallback: F,
+  field1: K1,
+  field2: K2,
+  field3: K3,
+): V3<T, K1, K2, K3> | undefined;
 export function getOrDef<
   T,
   F,

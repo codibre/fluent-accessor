@@ -1,7 +1,7 @@
 {
   "name": "fluent-accessor",
   "description": "Create accessor functions for nested properties easily, inclemently, strongly typed and beautifully!",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": {
     "name": "Thiago O Santos <tos.oliveira@gmail.com>"
   },

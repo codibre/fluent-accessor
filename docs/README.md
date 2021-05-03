@@ -1,6 +1,6 @@
-fluent-iterable - v1.2.2
+fluent-iterable - v1.2.3
 
-# fluent-iterable - v1.2.2
+# fluent-iterable - v1.2.3
 
 ## Table of contents
 
@@ -57,23 +57,23 @@ ___
 
 #### Type parameters:
 
-Name | Default |
------- | ------ |
-`Input` | - |
-`Output` | Input |
+| Name | Default |
+| :------ | :------ |
+| `Input` | - |
+| `Output` | Input |
 
 ___
 
 ### ExtenderExpression
 
-Ƭ **ExtenderExpression**<Input, Output\>: { [key in keyof Output]: ExtenderExpression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `__@jsonPathSymbol@22608`: () => (*string* \| *number* \| *symbol*)[]  }
+Ƭ **ExtenderExpression**<Input, Output\>: { [key in keyof Output]: ExtenderExpression<Input, Output[key]\>} & [*PropertyAccessor*](interfaces/propertyaccessor.md)<Input, Output\> & { `[jsonPathSymbol]`: () => [*FieldType*](README.md#fieldtype)[]  }
 
 #### Type parameters:
 
-Name | Default |
------- | ------ |
-`Input` | - |
-`Output` | Input |
+| Name | Default |
+| :------ | :------ |
+| `Input` | - |
+| `Output` | Input |
 
 ___
 
@@ -89,9 +89,9 @@ ___
 
 #### Type parameters:
 
-Name |
------- |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
 ___
 
@@ -101,9 +101,9 @@ ___
 
 #### Type parameters:
 
-Name |
------- |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
 ___
 
@@ -113,10 +113,10 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
 
 ___
 
@@ -126,19 +126,19 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
-`K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
-`K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
-`K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
-`K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
-`K8` | [*K*](README.md#k)<[*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\>\> |
-`K9` | [*K*](README.md#k)<[*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\>\> |
-`K10` | [*K*](README.md#k)<[*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| `K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
+| `K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
+| `K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
+| `K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
+| `K8` | [*K*](README.md#k)<[*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\>\> |
+| `K9` | [*K*](README.md#k)<[*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\>\> |
+| `K10` | [*K*](README.md#k)<[*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>\> |
 
 ___
 
@@ -148,11 +148,11 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
 
 ___
 
@@ -162,12 +162,12 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
 
 ___
 
@@ -177,13 +177,13 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
-`K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| `K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
 
 ___
 
@@ -193,14 +193,14 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
-`K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
-`K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| `K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
+| `K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
 
 ___
 
@@ -210,15 +210,15 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
-`K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
-`K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
-`K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| `K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
+| `K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
+| `K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
 
 ___
 
@@ -228,16 +228,16 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
-`K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
-`K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
-`K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
-`K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| `K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
+| `K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
+| `K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
+| `K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
 
 ___
 
@@ -247,17 +247,17 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
-`K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
-`K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
-`K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
-`K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
-`K8` | [*K*](README.md#k)<[*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| `K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
+| `K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
+| `K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
+| `K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
+| `K8` | [*K*](README.md#k)<[*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\>\> |
 
 ___
 
@@ -267,18 +267,18 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | [*K*](README.md#k)<T\> |
-`K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
-`K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
-`K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
-`K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
-`K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
-`K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
-`K8` | [*K*](README.md#k)<[*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\>\> |
-`K9` | [*K*](README.md#k)<[*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\>\> |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | [*K*](README.md#k)<T\> |
+| `K2` | [*K*](README.md#k)<[*V*](README.md#v)<T, K1\>\> |
+| `K3` | [*K*](README.md#k)<[*V2*](README.md#v2)<T, K1, K2\>\> |
+| `K4` | [*K*](README.md#k)<[*V3*](README.md#v3)<T, K1, K2, K3\>\> |
+| `K5` | [*K*](README.md#k)<[*V4*](README.md#v4)<T, K1, K2, K3, K4\>\> |
+| `K6` | [*K*](README.md#k)<[*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\> |
+| `K7` | [*K*](README.md#k)<[*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\> |
+| `K8` | [*K*](README.md#k)<[*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\>\> |
+| `K9` | [*K*](README.md#k)<[*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\>\> |
 
 ## Variables
 
@@ -288,10 +288,10 @@ Name | Type |
 
 #### Type declaration:
 
-Name | Type |
------- | ------ |
-`first` | *symbol* |
-`last` | *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `first` | *symbol* |
+| `last` | *symbol* |
 
 ___
 
@@ -313,9 +313,9 @@ ___
 
 #### Type parameters:
 
-Name |
------- |
-`T` |
+| Name |
+| :------ |
+| `T` |
 
 **Returns:** [*ExtenderExpression*](README.md#extenderexpression)<T, T\>
 
@@ -323,16 +323,16 @@ Name |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V*](README.md#v)<T, K1\>\>
 
@@ -340,18 +340,18 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V2*](README.md#v2)<T, K1, K2\>\>
 
@@ -359,20 +359,20 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | - |
-`K2` | *string* \| *number* \| *symbol* | - |
-`K3` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>\> |
+| Name | Type | Default |
+| :------ | :------ | :------ |
+| `T` | - | - |
+| `K1` | *string* \| *number* \| *symbol* | - |
+| `K2` | *string* \| *number* \| *symbol* | - |
+| `K3` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>\> |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V3*](README.md#v3)<T, K1, K2, K3\>\>
 
@@ -380,22 +380,22 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | - |
-`K2` | *string* \| *number* \| *symbol* | - |
-`K3` | *string* \| *number* \| *symbol* | - |
-`K4` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>\> |
+| Name | Type | Default |
+| :------ | :------ | :------ |
+| `T` | - | - |
+| `K1` | *string* \| *number* \| *symbol* | - |
+| `K2` | *string* \| *number* \| *symbol* | - |
+| `K3` | *string* \| *number* \| *symbol* | - |
+| `K4` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>\> |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V4*](README.md#v4)<T, K1, K2, K3, K4\>\>
 
@@ -403,24 +403,24 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | - |
-`K2` | *string* \| *number* \| *symbol* | - |
-`K3` | *string* \| *number* \| *symbol* | - |
-`K4` | *string* \| *number* \| *symbol* | - |
-`K5` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>\> |
+| Name | Type | Default |
+| :------ | :------ | :------ |
+| `T` | - | - |
+| `K1` | *string* \| *number* \| *symbol* | - |
+| `K2` | *string* \| *number* \| *symbol* | - |
+| `K3` | *string* \| *number* \| *symbol* | - |
+| `K4` | *string* \| *number* \| *symbol* | - |
+| `K5` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>\> |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\>\>
 
@@ -428,26 +428,26 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type | Default |
------- | ------ | ------ |
-`T` | - | - |
-`K1` | *string* \| *number* \| *symbol* | - |
-`K2` | *string* \| *number* \| *symbol* | - |
-`K3` | *string* \| *number* \| *symbol* | - |
-`K4` | *string* \| *number* \| *symbol* | - |
-`K5` | *string* \| *number* \| *symbol* | - |
-`K6` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>\> |
+| Name | Type | Default |
+| :------ | :------ | :------ |
+| `T` | - | - |
+| `K1` | *string* \| *number* \| *symbol* | - |
+| `K2` | *string* \| *number* \| *symbol* | - |
+| `K3` | *string* \| *number* \| *symbol* | - |
+| `K4` | *string* \| *number* \| *symbol* | - |
+| `K5` | *string* \| *number* \| *symbol* | - |
+| `K6` | *string* \| *number* \| *symbol* | [*K*](README.md#k)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<[*V*](README.md#v)<T, K1\>, K2\>, K3\>, K4\>, K5\>\> |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\>\>
 
@@ -455,28 +455,28 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\>\>
 
@@ -484,30 +484,30 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\>\>
 
@@ -515,32 +515,32 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\>\>
 
@@ -548,73 +548,73 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
-`K10` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
+| `K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
-`field10` | K10 |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
+| `field10` | K10 |
 
 **Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, [*V10*](README.md#v10)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>\>
 
-▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): [*BaseExpression*](interfaces/baseexpression.md)<T, *any*\>
+▸ **$**<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\>(`field1`: K1, `field2`: K2, `field3`: K3, `field4`: K4, `field5`: K5, `field6`: K6, `field7`: K7, `field8`: K8, `field9`: K9, `field10`: K10, `field11`: [*FieldType*](README.md#fieldtype), ...`others`: [*FieldType*](README.md#fieldtype)[]): [*BaseExpression*](interfaces/baseexpression.md)<T, any\>
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
-`K10` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
+| `K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
-`field10` | K10 |
-`field11` | [*FieldType*](README.md#fieldtype) |
-`...others` | [*FieldType*](README.md#fieldtype)[] |
+| Name | Type |
+| :------ | :------ |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
+| `field10` | K10 |
+| `field11` | [*FieldType*](README.md#fieldtype) |
+| `...others` | [*FieldType*](README.md#fieldtype)[] |
 
-**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, *any*\>
+**Returns:** [*BaseExpression*](interfaces/baseexpression.md)<T, any\>
 
 ___
 
@@ -626,18 +626,18 @@ Applies the given fallback for the Expression
 
 #### Type parameters:
 
-Name |
------- |
-`T` |
-`R` |
-`F` |
+| Name |
+| :------ |
+| `T` |
+| `R` |
+| `F` |
 
 #### Parameters:
 
-Name | Type | Description |
------- | ------ | ------ |
-`func` | [*Expression*](README.md#expression)<T, R\> | The expression you to apply the fallback   |
-`fallbackValue` | F | the fallback    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `func` | [*Expression*](README.md#expression)<T, R\> | The expression you to apply the fallback |
+| `fallbackValue` | F | the fallback |
 
 **Returns:** [*Expression*](README.md#expression)<T, R\>
 
@@ -649,17 +649,17 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
 
 **Returns:** [*V*](README.md#v)<T, K1\> \| *undefined*
 
@@ -667,19 +667,19 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
 
 **Returns:** [*V2*](README.md#v2)<T, K1, K2\> \| *undefined*
 
@@ -687,21 +687,21 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
 
 **Returns:** [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
 
@@ -709,23 +709,23 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
 
 **Returns:** [*V4*](README.md#v4)<T, K1, K2, K3, K4\> \| *undefined*
 
@@ -733,25 +733,25 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
 
 **Returns:** [*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\> \| *undefined*
 
@@ -759,27 +759,27 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
 
 **Returns:** [*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\> \| *undefined*
 
@@ -787,29 +787,29 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
 
 **Returns:** [*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\> \| *undefined*
 
@@ -817,31 +817,31 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
 
 **Returns:** [*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\> \| *undefined*
 
@@ -849,33 +849,33 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
 
 **Returns:** [*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\> \| *undefined*
 
@@ -883,35 +883,35 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
-`K10` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
+| `K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
-`field10` | K10 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
+| `field10` | K10 |
 
 **Returns:** [*V10*](README.md#v10)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\> \| *undefined*
 
@@ -919,37 +919,37 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
-`K10` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
+| `K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
-`field10` | K10 |
-`field11` | [*FieldType*](README.md#fieldtype) |
-`...others` | [*FieldType*](README.md#fieldtype)[] |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
+| `field10` | K10 |
+| `field11` | [*FieldType*](README.md#fieldtype) |
+| `...others` | [*FieldType*](README.md#fieldtype)[] |
 
 **Returns:** *any* \| *undefined*
 
@@ -961,19 +961,19 @@ ___
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
 
 **Returns:** [*V*](README.md#v)<T, K1\> \| *undefined*
 
@@ -981,44 +981,45 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
 
 **Returns:** [*V2*](README.md#v2)<T, K1, K2\> \| *undefined*
 
-▸ **getOrDef**<T, F, K1, K2, K3\>(`source`: T, `field1`: K1, `field2`: K2, `field3`: K3): [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
+▸ **getOrDef**<T, F, K1, K2, K3\>(`source`: T, `fallback`: F, `field1`: K1, `field2`: K2, `field3`: K3): [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
 
 **Returns:** [*V3*](README.md#v3)<T, K1, K2, K3\> \| *undefined*
 
@@ -1026,25 +1027,25 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
 
 **Returns:** [*V4*](README.md#v4)<T, K1, K2, K3, K4\> \| *undefined*
 
@@ -1052,27 +1053,27 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
 
 **Returns:** [*V5*](README.md#v5)<T, K1, K2, K3, K4, K5\> \| *undefined*
 
@@ -1080,29 +1081,29 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
 
 **Returns:** [*V6*](README.md#v6)<T, K1, K2, K3, K4, K5, K6\> \| *undefined*
 
@@ -1110,31 +1111,31 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
 
 **Returns:** [*V7*](README.md#v7)<T, K1, K2, K3, K4, K5, K6, K7\> \| *undefined*
 
@@ -1142,33 +1143,33 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
 
 **Returns:** [*V8*](README.md#v8)<T, K1, K2, K3, K4, K5, K6, K7, K8\> \| *undefined*
 
@@ -1176,35 +1177,35 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
 
 **Returns:** [*V9*](README.md#v9)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9\> \| *undefined*
 
@@ -1212,37 +1213,37 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
-`K10` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
+| `K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
-`field10` | K10 |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
+| `field10` | K10 |
 
 **Returns:** [*V10*](README.md#v10)<T, K1, K2, K3, K4, K5, K6, K7, K8, K9, K10\> \| *undefined*
 
@@ -1250,39 +1251,39 @@ Name | Type |
 
 #### Type parameters:
 
-Name | Type |
------- | ------ |
-`T` | - |
-`F` | - |
-`K1` | *string* \| *number* \| *symbol* |
-`K2` | *string* \| *number* \| *symbol* |
-`K3` | *string* \| *number* \| *symbol* |
-`K4` | *string* \| *number* \| *symbol* |
-`K5` | *string* \| *number* \| *symbol* |
-`K6` | *string* \| *number* \| *symbol* |
-`K7` | *string* \| *number* \| *symbol* |
-`K8` | *string* \| *number* \| *symbol* |
-`K9` | *string* \| *number* \| *symbol* |
-`K10` | *string* \| *number* \| *symbol* |
+| Name | Type |
+| :------ | :------ |
+| `T` | - |
+| `F` | - |
+| `K1` | *string* \| *number* \| *symbol* |
+| `K2` | *string* \| *number* \| *symbol* |
+| `K3` | *string* \| *number* \| *symbol* |
+| `K4` | *string* \| *number* \| *symbol* |
+| `K5` | *string* \| *number* \| *symbol* |
+| `K6` | *string* \| *number* \| *symbol* |
+| `K7` | *string* \| *number* \| *symbol* |
+| `K8` | *string* \| *number* \| *symbol* |
+| `K9` | *string* \| *number* \| *symbol* |
+| `K10` | *string* \| *number* \| *symbol* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`source` | T |
-`fallback` | F |
-`field1` | K1 |
-`field2` | K2 |
-`field3` | K3 |
-`field4` | K4 |
-`field5` | K5 |
-`field6` | K6 |
-`field7` | K7 |
-`field8` | K8 |
-`field9` | K9 |
-`field10` | K10 |
-`field11` | [*FieldType*](README.md#fieldtype) |
-`...others` | [*FieldType*](README.md#fieldtype)[] |
+| Name | Type |
+| :------ | :------ |
+| `source` | T |
+| `fallback` | F |
+| `field1` | K1 |
+| `field2` | K2 |
+| `field3` | K3 |
+| `field4` | K4 |
+| `field5` | K5 |
+| `field6` | K6 |
+| `field7` | K7 |
+| `field8` | K8 |
+| `field9` | K9 |
+| `field10` | K10 |
+| `field11` | [*FieldType*](README.md#fieldtype) |
+| `...others` | [*FieldType*](README.md#fieldtype)[] |
 
 **Returns:** *any* \| *undefined*
 
@@ -1290,24 +1291,24 @@ ___
 
 ### jsonPath
 
-▸ **jsonPath**<T, R\>(`a`: [*Expression*](README.md#expression)<T, R\>): (*string* \| *number* \| *symbol*)[]
+▸ **jsonPath**<T, R\>(`a`: [*Expression*](README.md#expression)<T, R\>): [*FieldType*](README.md#fieldtype)[]
 
 Returns an iterable with the json path for the informed expression
 
 #### Type parameters:
 
-Name |
------- |
-`T` |
-`R` |
+| Name |
+| :------ |
+| `T` |
+| `R` |
 
 #### Parameters:
 
-Name | Type | Description |
------- | ------ | ------ |
-`a` | [*Expression*](README.md#expression)<T, R\> | the expression to be analyzed   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `a` | [*Expression*](README.md#expression)<T, R\> | the expression to be analyzed |
 
-**Returns:** (*string* \| *number* \| *symbol*)[]
+**Returns:** [*FieldType*](README.md#fieldtype)[]
 
 an iterable with the json path for the informed expression
 
@@ -1323,16 +1324,16 @@ Se tto false if you want to always returns the fallback, even when it is undefin
 
 #### Type parameters:
 
-Name |
------- |
-`T` |
-`R` |
+| Name |
+| :------ |
+| `T` |
+| `R` |
 
 #### Parameters:
 
-Name | Type | Description |
------- | ------ | ------ |
-`accessor` | [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\> | The acessor to have the strictness changed   |
-`strict` | *boolean* | the new value for strictness: true or false    |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `accessor` | [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\> | The acessor to have the strictness changed |
+| `strict` | *boolean* | the new value for strictness: true or false |
 
 **Returns:** [*PropertyAccessor*](interfaces/propertyaccessor.md)<T, R\>

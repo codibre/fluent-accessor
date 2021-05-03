@@ -1,13 +1,13 @@
-[fluent-iterable - v1.2.2](../README.md) / PropertyAccessor
+[fluent-iterable - v1.2.3](../README.md) / PropertyAccessor
 
 # Interface: PropertyAccessor<Input, Output\>
 
 ## Type parameters
 
-Name |
------- |
-`Input` |
-`Output` |
+| Name |
+| :------ |
+| `Input` |
+| `Output` |
 
 ## Hierarchy
 
@@ -21,15 +21,15 @@ Name |
 
 #### Type parameters:
 
-Name | Default |
------- | ------ |
-`Fallback` | *never* |
+| Name | Default |
+| :------ | :------ |
+| `Fallback` | *never* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`input` | Input |
-`fallback?` | Fallback |
+| Name | Type |
+| :------ | :------ |
+| `input` | Input |
+| `fallback?` | Fallback |
 
 **Returns:** Output \| Fallback

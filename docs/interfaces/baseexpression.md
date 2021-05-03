@@ -1,13 +1,13 @@
-[fluent-iterable - v1.2.2](../README.md) / BaseExpression
+[fluent-iterable - v1.2.3](../README.md) / BaseExpression
 
 # Interface: BaseExpression<Input, Output\>
 
 ## Type parameters
 
-Name | Default |
------- | ------ |
-`Input` | - |
-`Output` | Input |
+| Name | Default |
+| :------ | :------ |
+| `Input` | - |
+| `Output` | Input |
 
 ## Hierarchy
 
@@ -21,16 +21,16 @@ Name | Default |
 
 #### Type parameters:
 
-Name | Default |
------- | ------ |
-`Fallback` | *never* |
+| Name | Default |
+| :------ | :------ |
+| `Fallback` | *never* |
 
 #### Parameters:
 
-Name | Type |
------- | ------ |
-`input` | Input |
-`fallback?` | Fallback |
+| Name | Type |
+| :------ | :------ |
+| `input` | Input |
+| `fallback?` | Fallback |
 
 **Returns:** Output \| Fallback
 
@@ -38,17 +38,17 @@ Name | Type |
 
 ### Methods
 
-- [\_\_@jsonPathSymbol@22608](baseexpression.md#__@jsonpathsymbol@22608)
+- [[jsonPathSymbol]](baseexpression.md#[jsonpathsymbol])
 - [extend](baseexpression.md#extend)
 - [jsonPath](baseexpression.md#jsonpath)
 
 ## Methods
 
-### \_\_@jsonPathSymbol@22608
+### [jsonPathSymbol]
 
-▸ **__@jsonPathSymbol@22608**(): (*string* \| *number* \| *symbol*)[]
+▸ **[jsonPathSymbol]**(): [*FieldType*](../README.md#fieldtype)[]
 
-**Returns:** (*string* \| *number* \| *symbol*)[]
+**Returns:** [*FieldType*](../README.md#fieldtype)[]
 
 ___
 
@@ -62,6 +62,6 @@ ___
 
 ### jsonPath
 
-▸ **jsonPath**(): (*string* \| *number* \| *symbol*)[]
+▸ **jsonPath**(): [*FieldType*](../README.md#fieldtype)[]
 
-**Returns:** (*string* \| *number* \| *symbol*)[]
+**Returns:** [*FieldType*](../README.md#fieldtype)[]

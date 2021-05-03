@@ -1,5 +1,9 @@
 
-## 1.2.2
+## 1.2.3
+* ece5936 fixing vulnerabilities
+* c95bfc1 fixing vulnerabilities
+## v1.2.2
+* 229b426 1.2.2
 * 472f455 removing inconsistent feature
 * ae98c88 Merge pull request #7 from Codibre/operators
 ## v1.2.1
